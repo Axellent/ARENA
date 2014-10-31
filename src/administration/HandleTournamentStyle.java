@@ -1,5 +1,5 @@
 package administration;
 
-public class HandleTournamentStyle {
+public class HandleTournamentStyle extends OperatorTools{
 
 }

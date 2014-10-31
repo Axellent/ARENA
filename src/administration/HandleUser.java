@@ -1,5 +1,5 @@
 package administration;
 
-public class HandleUser {
+public class HandleUser extends OperatorTools{
 
 }

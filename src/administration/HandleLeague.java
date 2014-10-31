@@ -1,5 +1,5 @@
 package administration;
 
-public class HandleLeague {
+public class HandleLeague extends OperatorTools{
 
 }

@@ -1,5 +1,5 @@
 package administration;
 
-public class HandleGame {
+public class HandleGame extends OperatorTools{
 
 }

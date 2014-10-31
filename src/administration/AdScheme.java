@@ -1,5 +1,5 @@
 package administration;
 
-public class AdScheme {
-
+public class AdScheme extends OperatorTools{
+	
 }

@@ -1,10 +1,23 @@
 package administration;
 
-public class Operator implements OperatorInterface{
-	OperatorAdapter operatorAdapter;
+import administration.OperatorTools.UnimplementedToolException;
+
+public class Operator{
+	private OperatorTools systemOnOff;
+
+	public Operator(){
+		systemOnOff = new SystemOnOff();
+		
+		try {
+			systemOnOff.startSystem();
+		} catch (UnimplementedToolException e){
+			e.printStackTrace();
+		}
+	}
 	
+
 	public static void main(String[] args){
-		System.out.println("Hello World!");
+		new Operator();
 	}
 	
 }
