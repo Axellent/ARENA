@@ -1,5 +1,7 @@
 package administration;
 
+import general.UnimplementedToolException;
+
 /**
  * Superclass for all tools authorized for use by an Operator.
  * @author Axel Sigl
@@ -23,15 +25,5 @@ public abstract class OperatorTools {
 	 */
 	public void stopSystem() throws UnimplementedToolException{
 		throw new UnimplementedToolException("StopSystem");
-	}
-	
-	/**
-	 * Should be thrown when a method of a subclass to OperatorTools is not implemented.
-	 * @author Axel Sigl
-	 */
-	public class UnimplementedToolException extends Exception{
-		public UnimplementedToolException(String method){
-			super(method + " is not implemented for this tool");
-		}
 	}
 }

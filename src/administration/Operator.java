@@ -1,7 +1,7 @@
 package administration;
 
-import administration.OperatorTools.UnimplementedToolException;
-import arena.User;
+import general.UnimplementedToolException;
+import general.User;
 
 /**
  * Has access to all funtionality related to operating the application.

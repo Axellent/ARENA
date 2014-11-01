@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true">  
   <class id="1" language="java" name="administration.AdScheme" project="ARENA" 
     file="/ARENA/src/administration/AdScheme.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="158" y="107"/>    
+    <position height="-1" width="-1" x="277" y="108"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="administration.HandleGame" project="ARENA" 
     file="/ARENA/src/administration/HandleGame.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="161" y="207"/>    
+    <position height="-1" width="-1" x="280" y="208"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="administration.HandleLeague" project="ARENA" 
     file="/ARENA/src/administration/HandleLeague.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="164" y="312"/>    
+    <position height="-1" width="-1" x="283" y="313"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="administration.HandleTournamentStyle" project="ARENA" 
     file="/ARENA/src/administration/HandleTournamentStyle.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="791" y="325"/>    
+    <position height="-1" width="-1" x="769" y="323"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="administration.HandleUser" project="ARENA" 
     file="/ARENA/src/administration/HandleUser.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="760" y="203"/>    
+    <position height="-1" width="-1" x="735" y="201"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,23 +48,14 @@
   </class>  
   <class id="6" language="java" name="administration.Operator" project="ARENA" 
     file="/ARENA/src/administration/Operator.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="498" y="64"/>    
+    <position height="-1" width="-1" x="508" y="64"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="administration.OperatorTools.UnimplementedToolException" project="ARENA" 
-    file="/ARENA/src/administration/OperatorTools.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="508" y="327"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="administration.OperatorTools" project="ARENA" 
+  <class id="7" language="java" name="administration.OperatorTools" project="ARENA" 
     file="/ARENA/src/administration/OperatorTools.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="509" y="223"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -73,7 +64,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="administration.SystemOnOff" project="ARENA" 
+  <class id="8" language="java" name="administration.SystemOnOff" project="ARENA" 
     file="/ARENA/src/administration/SystemOnOff.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="742" y="76"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -82,54 +73,160 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="arena.User" project="ARENA" file="/ARENA/src/arena/User.java" binary="false" 
+  <class id="9" language="java" name="general.User" project="ARENA" file="/ARENA/src/general/User.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="496" y="-106"/>    
+    <position height="-1" width="-1" x="1107" y="-28"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="11">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="12" name="systemOnOff"/>      
-      <multiplicity id="13" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="14">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <generalization id="15">    
-    <end type="SOURCE" refId="6"/>    
+  <class id="10" language="java" name="general.GeneralTools" project="ARENA" file="/ARENA/src/general/GeneralTools.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1107" y="189"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="general.CheckStatistics" project="ARENA" 
+    file="/ARENA/src/general/CheckStatistics.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="929" y="74"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="general.HandleAccount" project="ARENA" 
+    file="/ARENA/src/general/HandleAccount.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="927" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="general.HandleLeagueParticipation" project="ARENA" 
+    file="/ARENA/src/general/HandleLeagueParticipation.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="960" y="317"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="general.HandleTournamentParticipation" project="ARENA" 
+    file="/ARENA/src/general/HandleTournamentParticipation.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1266" y="317"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="general.HandleLogin" project="ARENA" file="/ARENA/src/general/HandleLogin.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1264" y="188"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="general.MonitorMatch" project="ARENA" file="/ARENA/src/general/MonitorMatch.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1254" y="70"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="general.UnimplementedToolException" project="ARENA" 
+    file="/ARENA/src/general/UnimplementedToolException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1101" y="445"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="18">    
+    <end type="SOURCE" refId="15"/>    
     <end type="TARGET" refId="10"/>  
   </generalization>  
-  <generalization id="16">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <generalization id="17">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
-  <generalization id="18">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="8"/>  
-  </generalization>  
   <generalization id="19">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="8"/>  
+    <bendpoint x="663" y="-27"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
   </generalization>  
-  <nesting id="20">    
+  <dependency id="20">    
+    <bendpoint x="615" y="442"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="17"/>  
+  </dependency>  
+  <generalization id="21">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <generalization id="23">    
     <end type="SOURCE" refId="8"/>    
     <end type="TARGET" refId="7"/>  
-  </nesting>  
-  <generalization id="21">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <generalization id="24">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <association id="25">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="26" name="systemOnOff"/>      
+      <multiplicity id="27" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="28">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <generalization id="29">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <generalization id="30">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <generalization id="31">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <generalization id="32">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <generalization id="33">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <association id="34">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="35" name="Login"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
