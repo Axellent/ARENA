@@ -15,7 +15,7 @@ public abstract class OperatorTools {
 	 * @throws UnimplementedToolException
 	 */
 	public void startSystem() throws UnimplementedToolException{
-		throw new UnimplementedToolException("StartSystem");
+		throw new UnimplementedToolException("startSystem");
 	}
 	
 	/**
@@ -24,6 +24,33 @@ public abstract class OperatorTools {
 	 * @throws UnimplementedToolException
 	 */
 	public void stopSystem() throws UnimplementedToolException{
-		throw new UnimplementedToolException("StopSystem");
+		throw new UnimplementedToolException("stopSystem");
+	}
+	
+	/**
+	 * 
+	 * @author Axel Sigl
+	 * @throws UnimplementedToolException
+	 */
+	public void getTestGame() throws UnimplementedToolException{
+		throw new UnimplementedToolException("getTestGame");
+	}
+	
+	/**
+	 * 
+	 * @author Axel Sigl
+	 * @throws UnimplementedToolException
+	 */
+	public void installGame() throws UnimplementedToolException{
+		throw new UnimplementedToolException("installGame");
+	}
+	
+	/**
+	 * 
+	 * @author Axel Sigl
+	 * @throws UnimplementedToolException
+	 */
+	public void testGame() throws UnimplementedToolException{
+		throw new UnimplementedToolException("testGame");
 	}
 }
