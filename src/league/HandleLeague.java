@@ -5,6 +5,6 @@ package league;
  * @author Axel Sigl
  *
  */
-public class AnnounceTournament extends LeagueTools{
+public class HandleLeague extends LeagueTools{
 
 }

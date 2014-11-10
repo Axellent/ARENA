@@ -6,6 +6,6 @@ package general;
  *
  */
 public class Spectator {
-	GeneralTools monitorMatch;
-	GeneralTools checkStatistics;
+	private GeneralTools monitorMatch;
+	private GeneralTools checkStatistics;
 }

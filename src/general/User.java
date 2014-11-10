@@ -1,5 +1,11 @@
 package general;
 
+/**
+ * 
+ * @author Axel Sigl
+ *
+ */
 public abstract class User {
-	private GeneralTools Login;
+	private GeneralTools login;
+	
 }
