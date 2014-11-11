@@ -6,5 +6,8 @@ package league;
  *
  */
 public class HandleLeague extends LeagueTools{
-
+	public League startLeague(){
+		return null;
+	}
+	
 }

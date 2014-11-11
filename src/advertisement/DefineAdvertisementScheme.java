@@ -5,6 +5,6 @@ package advertisement;
  * @author Axel Sigl
  *
  */
-class DefineAdvertisementScheme extends AdvertiserTools{
+public class DefineAdvertisementScheme extends AdvertiserTools{
 
 }

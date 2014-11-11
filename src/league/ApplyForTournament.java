@@ -6,5 +6,7 @@ package league;
  *
  */
 public class ApplyForTournament extends LeagueTools{
-
+	public void processApplication(){
+		
+	}
 }

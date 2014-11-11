@@ -7,7 +7,7 @@ package play;
  */
 public class PlayGame{
 
-	public void playMatch(){
+	public void setupMatch(){
 		
 	}
 }

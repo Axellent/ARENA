@@ -6,18 +6,21 @@ package league;
  *
  */
 public class ConductTournament extends LeagueTools{
+	private Tournament tournament;
 	
-	public void startTournament(){
-		
+	@Override
+	public void startTournament(Tournament tournament){
+		this.tournament = tournament;
 	}
 	
+	@Override
 	public void scheduleMatches(){
 		
 	}
 	
-	public void submitAdvertisement(){
+	@Override
+	public void kickoffTournament(){
 		
 	}
-	
 	
 }

@@ -1,5 +1,6 @@
 package administration;
 
+import league.LeagueOwner;
 import general.UnimplementedToolException;
 import general.User;
 
@@ -20,10 +21,14 @@ public class Operator extends User{
 		
 		try {
 			systemOnOff.startSystem();
-			systemOnOff.stopSystem();
+			//systemOnOff.stopSystem();
 		} catch (UnimplementedToolException e){
 			e.printStackTrace();
 		}
+	}
+	
+	public boolean handleLeagueRequest(){
+		return true;
 	}
 
 	/**
@@ -33,6 +38,7 @@ public class Operator extends User{
 	 */
 	public static void main(String[] args){
 		new Operator();
+		new LeagueOwner();
 	}
 	
 }

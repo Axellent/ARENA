@@ -7,7 +7,7 @@ package league;
  */
 public class ArchiveTournament extends LeagueTools{
 
-	public void archiveTournament(){
+	public void archiveTournament(Tournament tournament){
 		
 	}
 }
