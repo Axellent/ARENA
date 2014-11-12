@@ -1,12 +1,16 @@
 package league;
 
+import play.Player;
+
 /**
  * 
  * @author Axel Sigl
  *
  */
 public class ApplyForTournament extends LeagueTools{
-	public void processApplication(){
+	
+	@Override
+	public void applyForTournament(Tournament tournament, Player player){
 		
 	}
 }

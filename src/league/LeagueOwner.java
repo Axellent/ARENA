@@ -20,6 +20,11 @@ public class LeagueOwner extends User{
 		//testing stuff
 		createTournament();
 		startTournament();
+		try {
+			conductTournament.scheduleMatches();
+		} catch (UnimplementedToolException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void createTournament(){

@@ -2,6 +2,11 @@ package league;
 
 import play.Player;
 
+/**
+ * 
+ * @author Axel Sigl
+ *
+ */
 public class Tournament {
 	private String name;
 	private int minPlayers;
@@ -10,9 +15,10 @@ public class Tournament {
 	private int nPlayers;
 	
 	/**
-	 * 
+	 * Creates a new Tournament object with the default amount of minPlayers.
 	 * @author Axel Sigl
 	 * @param name
+	 * @param maxPlayers
 	 */
 	public Tournament(String name, int maxPlayers){
 		this.name = name;
@@ -23,7 +29,7 @@ public class Tournament {
 	}
 	
 	/**
-	 * 
+	 * Creates a Tournament object with the given parameters.
 	 * @author Axel Sigl
 	 * @param name
 	 * @param maxPlayers
@@ -36,6 +42,11 @@ public class Tournament {
 		nPlayers = 0;
 	}
 	
+	/**
+	 * Adds a player to the tournament if the maximum is not reached.
+	 * @author Axel Sigl
+	 * @param player
+	 */
 	public void addPlayer(Player player){
 		if(nPlayers < maxPlayers){
 			players[nPlayers] = player;
@@ -47,7 +58,7 @@ public class Tournament {
 	}
 	
 	/**
-	 * 
+	 * Changes tournament name.
 	 * @author Axel Sigl
 	 * @param name
 	 */
@@ -56,7 +67,7 @@ public class Tournament {
 	}
 	
 	/**
-	 * 
+	 * Changes minimum number of players.
 	 * @author Axel Sigl
 	 * @param minPlayers
 	 */
@@ -65,7 +76,7 @@ public class Tournament {
 	}
 	
 	/**
-	 * 
+	 * Changes maximum number of players.
 	 * @author Axel Sigl
 	 * @param maxPlayers
 	 */
@@ -76,7 +87,7 @@ public class Tournament {
 	/**
 	 * 
 	 * @author Axel Sigl
-	 * @return
+	 * @return Name of the tournament.
 	 */
 	public String getName(){
 		return name;
@@ -85,7 +96,7 @@ public class Tournament {
 	/**
 	 * 
 	 * @author Axel Sigl
-	 * @return
+	 * @return Minimum number of players.
 	 */
 	public int getMinPlayers(){
 		return minPlayers;
@@ -94,9 +105,27 @@ public class Tournament {
 	/**
 	 * 
 	 * @author Axel Sigl
-	 * @return
+	 * @return Maximum number of players.
 	 */
 	public int getMaxPlayers(){
 		return maxPlayers;
+	}
+	
+	/**
+	 * 
+	 * @author Axel Sigl
+	 * @return All players in the tournament.
+	 */
+	public Player[] getPlayers(){
+		return players;
+	}
+	
+	/**
+	 * 
+	 * @author Axel Sigl
+	 * @return Number of players in the tournament.
+	 */
+	public int getnPlayers(){
+		return nPlayers;
 	}
 }

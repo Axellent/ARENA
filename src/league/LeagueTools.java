@@ -1,5 +1,6 @@
 package league;
 
+import play.Player;
 import general.UnimplementedToolException;
 
 /**
@@ -35,5 +36,9 @@ public abstract class LeagueTools {
 	
 	public void announceTournament(Tournament tournament) throws UnimplementedToolException{
 		throw new UnimplementedToolException("announceTournament");
+	}
+
+	public void applyForTournament(Tournament tournament, Player player) throws UnimplementedToolException{
+		throw new UnimplementedToolException("applyForTournament");
 	}
 }
