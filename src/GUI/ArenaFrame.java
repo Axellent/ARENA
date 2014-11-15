@@ -1,17 +1,24 @@
 package GUI;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.Box;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 import league.LeagueOwner;
 
@@ -23,9 +30,7 @@ import league.LeagueOwner;
  */
 public class ArenaFrame extends JFrame {
     private String path;
-    private JTextField textfield1;
-    private JTextField textfield2;
-    
+
     //TODO Create a suitable class for the main method.
     public static void main(String[]args){
         
@@ -36,10 +41,10 @@ public class ArenaFrame extends JFrame {
     public ArenaFrame() {
         super();
         JLabel arenaLogo;
-        JPanel login;
         ImageIcon icon = null;
         BufferedImage myPicture = null;
-        
+        Box logoBox;
+        Box loginPanelBox;
         
         path = "img\\arena_logo.png";
         
@@ -49,29 +54,29 @@ public class ArenaFrame extends JFrame {
         } catch (IOException ex) {
             // handle exception
         }
-                
-        //setIcon(icon);
+                        
         
-        setLayout(new GridLayout(2,2));
-        
-        textfield1 = new JTextField("Enter user name: ", 10);
-        textfield2 = new JTextField("Enter password: ", 10);
-        
-        login = new JPanel();
-        //login.setLayout(new GridLayout(2,1));
-        login.add(textfield1);
-        login.add(textfield2);
-        login.setBackground(Color.black);
+        setLayout(new BorderLayout());
 
-        this.setVisible(true);
         arenaLogo = new JLabel(icon);
-        this.getContentPane().setBackground(Color.black);
+        logoBox = Box.createHorizontalBox();
+        logoBox.add(arenaLogo);
         
-        this.add(arenaLogo);
-        this.add(login);
-        this.setSize(740,600);
+        loginPanelBox = Box.createHorizontalBox();
+        loginPanelBox.add(new LoginPanel());
+        loginPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
+        
+        this.add(logoBox, BorderLayout.PAGE_START);
+        this.add(loginPanelBox, BorderLayout.CENTER);
+        
+        getContentPane().setBackground(Color.black);
+        this.setSize(800,600);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
+        this.setVisible(true);
+        
+        
+
     }
 }
