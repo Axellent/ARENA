@@ -1,20 +1,19 @@
 package GUI;
 
 import java.awt.Color;
-
 import java.awt.GridLayout;
 import java.awt.image.BufferedImage;
-
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+
+import league.LeagueOwner;
 
 
 /**
@@ -27,11 +26,13 @@ public class ArenaFrame extends JFrame {
     private JTextField textfield1;
     private JTextField textfield2;
     
+    //TODO Create a suitable class for the main method.
     public static void main(String[]args){
         
         new ArenaFrame();
-        
+        new LeagueOwner("ownerName");
     }
+    
     public ArenaFrame() {
         super();
         JLabel arenaLogo;

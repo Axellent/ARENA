@@ -4,19 +4,20 @@ import java.util.Random;
 import play.Player;
 
 /**
- * 
+ * Handles the schedule for a tournament.
  * @author Axel Sigl
  *
  */
 public class Schedule {
-	private Player[] unScheduledPlayers;
-	private int nUnScheduledPlayers;
+	private Player[] unscheduledPlayers;
+	private int nUnscheduledPlayers;
 	private Player[][] matches;
 	private int nMatches;
 
 	/**
 	 * Creates a random tournament schedule.
-	 * @Known_Problems schedule for uneven number of players?
+	 * @TODO schedule for uneven number of players?
+	 * @TODO scheduling for multiple tournament stages (semifinal, final etc).
 	 * @author Axel Sigl
 	 * @param tournament
 	 */
@@ -24,23 +25,51 @@ public class Schedule {
 		Random rand = new Random();
 		int randPlayer;
 		
-		unScheduledPlayers = tournament.getPlayers();
-		nUnScheduledPlayers = tournament.getnPlayers();
+		unscheduledPlayers = tournament.getPlayers();
+		nUnscheduledPlayers = tournament.getnPlayers();
 		matches = new Player[tournament.getMaxPlayers()][2];
 		nMatches = 0;
 		
 		for(int i = 0; i < tournament.getnPlayers()/2; i++){
-			randPlayer = rand.nextInt((nUnScheduledPlayers - 0)) + 0;
-			matches[i][1] = unScheduledPlayers[randPlayer];
+			randPlayer = rand.nextInt((nUnscheduledPlayers - 0)) + 0;
+			matches[i][1] = unscheduledPlayers[randPlayer];
+			nMatches++;
 			removeUnscheduledPlayer(randPlayer);
 			
-			randPlayer = rand.nextInt((nUnScheduledPlayers - 0)) + 0;
-			matches[i][2] = unScheduledPlayers[randPlayer];
+			randPlayer = rand.nextInt((nUnscheduledPlayers - 0)) + 0;
+			matches[i][2] = unscheduledPlayers[randPlayer];
+			nMatches++;
 			removeUnscheduledPlayer(randPlayer);
 		}
 	}
 	
+	/**
+	 * Removes the player at pos from the unscheduledPlayers array.
+	 * @author Axel Sigl
+	 * @param pos
+	 */
 	private void removeUnscheduledPlayer(int pos){
-		
+		for(int i = pos; i < nUnscheduledPlayers; i++){
+			unscheduledPlayers[i] = unscheduledPlayers[i+1];
+		}
+		nUnscheduledPlayers--;
+	}
+	
+	/**
+	 * 
+	 * @author Axel Sigl
+	 * @return The schedule of all the matches in the tournament.
+	 */
+	public Player[][] getMatches(){
+		return matches;
+	}
+	
+	/**
+	 * 
+	 * @author Axel Sigl
+	 * @return
+	 */
+	public int getnMatches(){
+		return nMatches;
 	}
 }
