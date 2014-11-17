@@ -10,7 +10,7 @@ import general.UnimplementedToolException;
  */
 public abstract class LeagueTools {
 	
-	public League startLeague() throws UnimplementedToolException{
+	public void startLeague(LeagueOwner leagueOwner) throws UnimplementedToolException{
 		throw new UnimplementedToolException("startLeague");
 	}
 	

@@ -12,7 +12,6 @@ public class LeagueOwner extends User{
 	private LeagueTools organizeTournament;
 	private LeagueTools conductTournament;
 	private LeagueTools handleLeague;
-	private League[] leagues;
 	
 	public LeagueOwner(String name){
 		setName(name);
@@ -29,7 +28,7 @@ public class LeagueOwner extends User{
 	
 	public void startLeague(){
 		try {
-			handleLeague.startLeague();
+			handleLeague.startLeague(this);
 		} catch (UnimplementedToolException e) {
 			e.printStackTrace();
 		}
