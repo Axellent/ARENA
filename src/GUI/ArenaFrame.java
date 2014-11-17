@@ -46,13 +46,20 @@ public class ArenaFrame extends JFrame {
         Box logoBox;
         Box loginPanelBox;
         
-        path = "img\\arena_logo.png";
+        String OS = System.getProperty("os.name").toLowerCase();
+        
+        if(OS.indexOf("win") >= 0){
+        	path = "img\\arena_logo.png";
+        }
+        if(OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0 || OS.indexOf("aix") >= 0){
+        	path = "img/arena_logo.png";
+        }
         
         try {
             myPicture = ImageIO.read(new File(path));
             icon = new ImageIcon(myPicture);
         } catch (IOException ex) {
-            // handle exception
+
         }
                         
         

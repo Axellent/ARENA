@@ -18,6 +18,7 @@ public class Schedule {
 	 * Creates a random tournament schedule.
 	 * @TODO schedule for uneven number of players?
 	 * @TODO scheduling for multiple tournament stages (semifinal, final etc).
+	 * @TODO Scheduling matches with more than one player one each team.
 	 * @author Axel Sigl
 	 * @param tournament
 	 */

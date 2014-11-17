@@ -6,8 +6,9 @@ package league;
  *
  */
 public class HandleLeague extends LeagueTools{
+	@Override
 	public League startLeague(){
-		return null;
+		return new League();
 	}
 	
 }

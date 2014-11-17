@@ -11,17 +11,28 @@ import general.User;
 public class LeagueOwner extends User{
 	private LeagueTools organizeTournament;
 	private LeagueTools conductTournament;
+	private LeagueTools handleLeague;
 	private League[] leagues;
 	
 	public LeagueOwner(String name){
 		setName(name);
-		this.organizeTournament = new OrganizeTournament();
-		this.conductTournament = new ConductTournament();
+		organizeTournament = new OrganizeTournament();
+		conductTournament = new ConductTournament();
+		handleLeague = new HandleLeague();
 		
 		//testing stuff
+		startLeague();
 		createTournament();
 		startTournament();
 		scheduleMatches();
+	}
+	
+	public void startLeague(){
+		try {
+			handleLeague.startLeague();
+		} catch (UnimplementedToolException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void createTournament(){
