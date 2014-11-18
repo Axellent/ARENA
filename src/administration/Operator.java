@@ -30,15 +30,4 @@ public class Operator extends User{
 	public boolean handleLeagueRequest(){
 		return true;
 	}
-
-	/**
-	 * 
-	 * @author Axel Sigl
-	 * @param args
-	 */
-	public static void main(String[] args){
-		new Operator();
-		new LeagueOwner();
-	}
-	
 }

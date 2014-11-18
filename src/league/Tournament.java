@@ -1,13 +1,17 @@
 package league;
 
+import play.Game;
 import play.Player;
 
 /**
- * 
+ * Holds all data required to organize and conduct a tournament
  * @author Axel Sigl
  *
  */
 public class Tournament {
+	private LeagueOwner leagueOwner;
+	private Game game;
+	private Schedule schedule;
 	private String name;
 	private int minPlayers;
 	private int maxPlayers;
@@ -20,12 +24,8 @@ public class Tournament {
 	 * @param name
 	 * @param maxPlayers
 	 */
-	public Tournament(String name, int maxPlayers){
-		this.name = name;
-		this.maxPlayers = maxPlayers;
-		minPlayers = 1;
-		players = new Player[maxPlayers];
-		nPlayers = 0;
+	public Tournament(LeagueOwner leagueOwner, Game game, String name, int maxPlayers){
+		new Tournament(leagueOwner, game, name, maxPlayers, 1);
 	}
 	
 	/**
@@ -35,7 +35,10 @@ public class Tournament {
 	 * @param maxPlayers
 	 * @param minPlayers
 	 */
-	public Tournament(String name, int maxPlayers, int minPlayers){
+	public Tournament(LeagueOwner leagueOwner, Game game, String name, int maxPlayers, int minPlayers){
+		schedule = new Schedule();
+		this.leagueOwner = leagueOwner;
+		this.game = game;
 		this.name = name;
 		this.maxPlayers = maxPlayers;
 		this.minPlayers = minPlayers;
@@ -55,6 +58,34 @@ public class Tournament {
 		else{
 			System.out.println("Maximum players reached!");
 		}
+	}
+	
+	/**
+	 * Searches the players vector and removes the player with the matching ID.
+	 * @author Axel Sigl
+	 * @param player
+	 */
+	public void removePlayer(Player player){
+		for(int i = 0; i < nPlayers; i++){
+			if(player.getID() == players[i].getID()){
+				removePlayer(i);
+			}
+		}
+	}
+	
+	/**
+	 * Removes the player at given index.
+	 * @author Axel Sigl
+	 * @param pos
+	 */
+	public void removePlayer(int pos){
+		for(int i = pos; i < nPlayers; i++){
+			players[i] = players[i+1];
+		}
+	}
+	
+	public void scheduleMatches(){
+		schedule.randomSchedule(this);
 	}
 	
 	/**
@@ -82,6 +113,15 @@ public class Tournament {
 	 */
 	public void setMaxPlayers(int maxPlayers){
 		this.maxPlayers = maxPlayers;
+	}
+	
+	/**
+	 * 
+	 * @author Axel Sigl
+	 * @return Schedule for the tournament.
+	 */
+	public Schedule getSchedule(){
+		return schedule;
 	}
 	
 	/**
