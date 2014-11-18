@@ -4,7 +4,7 @@ import general.User;
 
 /**
  * Handles the advertiser
- * @author Albin
+ * @author Albin Olausson
  *
  */
 public class Advertiser extends User {
@@ -18,8 +18,8 @@ public class Advertiser extends User {
      * @param password
      * @param credits
      */
-    public Advertiser(String name, String password, int credits){
-        super(name, password);
+    public Advertiser(String name, String password, int id, int credits){
+        super(name, password, id);
         balance = new HandleAccountBalance(credits);
     }       
     
