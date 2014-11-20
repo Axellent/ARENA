@@ -7,4 +7,16 @@ package advertisement;
  */
 public class HandleAdvertisement extends AdvertiserTools{
 
+	
+
+
+
+
+	
 }
+
+
+
+
+
+    

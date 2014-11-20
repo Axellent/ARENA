@@ -19,15 +19,19 @@ public class Advertiser extends User {
      * @param credits
      */
     public Advertiser(String name, String password, int id, int credits){
-        super(name, password, id);
+
+        setName(name);
+        setPassword(password);
+        setId(id);
         balance = new HandleAccountBalance(credits);
     }       
     
+    
     /**
-     * Used to withdraw credits from the advertiser
+     * Returns withdrawn amount
      * @author Albin Olausson
      * @param amount
-     * @return
+     * @return 
      */
     public boolean withdraw(int amount){
         return balance.withdraw(amount);
@@ -35,7 +39,7 @@ public class Advertiser extends User {
     
     
     /**
-     * Let's the advertiser add credits to their account
+     * Add credits to a account
      * @author Albin Olausson
      * @param amount
      * @return
