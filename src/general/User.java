@@ -11,6 +11,10 @@ public abstract class User {
 	private int id;
 	private GeneralTools login;
 	
+	public User(){
+		
+	}
+	
 	
 /**
  * Sets the name and password
@@ -43,5 +47,22 @@ public abstract class User {
 	 */
 	public String getPassword(){
 		return password;
+	}
+
+	/**
+	 * Returns the id
+	 * @author Andreas Lönnermark
+	 * @return
+	 */
+	public int getID(){
+		return id;
+	}
+
+	/**
+	 * @author Andreas Lönnermark
+	 * @param name
+	 */
+	public void setName(String name){
+		this.name = name;
 	}
 }
