@@ -14,19 +14,8 @@ public abstract class User {
 	public User(){
 		
 	}
+
 	
-	
-/**
- * Sets the name and password
- * @author Albin Olausson
- * @param name
- * @param password
- */
-	public User(String name, String password, int id){
-		this.name = name;
-		this.password = password;
-		this.id = id;
-	}
 	
 	
 	/**
@@ -64,5 +53,24 @@ public abstract class User {
 	 */
 	public void setName(String name){
 		this.name = name;
+	}
+	
+	/**
+	 *
+	 *@author Albin Olausson
+	 * @param id
+	 */
+	public void setId(int id){
+		this.id = id;
+	}
+	
+	
+	/**
+	 *
+	 *@author Albin Olausson
+	 * @param setPassword
+	 */
+	public void setPassword(String setPassword){
+		this.password = password;
 	}
 }
