@@ -3,32 +3,38 @@ package GUI;
 import java.awt.BorderLayout;
 import java.awt.Color;
 
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+import GUI.ArenaFrame;
 import java.awt.GridLayout;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import java.io.Serializable;
+
 import javax.swing.BorderFactory;
-import javax.swing.GroupLayout;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 
-public class LoginPanel extends JPanel {
+
+public class LoginPanel extends JPanel{
     
     private JPanel txtPanel;
     private JPanel btnPanel;
     private JTextField txtUserName;
     private JTextField txtPassword;
-    private JLabel btnLogin;
-    private JLabel btnRegister;
+    private JButton btnLogin;
+    private JButton btnRegister;
+    private ArenaFrame arenaFrame;
+    //private BtnListener listener;
     
-    public LoginPanel() {
+    public LoginPanel(ArenaFrame arenaFrame) {
         super();
+        
+        this.arenaFrame = arenaFrame;
         
         setLayout(new GridLayout(3, 0, 5, 2));
         
@@ -50,20 +56,36 @@ public class LoginPanel extends JPanel {
         btnPanel = new JPanel();
         btnPanel.setLayout(new GridLayout(1, 2, 2, 2));
         
-        btnRegister = new JLabel("      Register");
-        btnLogin = new JLabel("     Log In");
+        btnRegister = new JButton("      Register");
+        btnLogin = new JButton("     Log In");
+        
+        //BtnListener lForButton = new BtnListener();
+
+        //btnLogin.addActionListener(lForButton);
+        //btnRegister.addActionListener(lForButton);
         
         btnRegister.setOpaque(true);
         btnRegister.setBackground(Color.green);
         btnRegister.setForeground(Color.white);
-        //btnRegister.setBorder(BorderFactory.createLineBorder(Color.darkGray));
         
         btnLogin.setOpaque(true);
         btnLogin.setBackground(Color.green);
         btnLogin.setForeground(Color.white);
         
+        btnLogin.addActionListener(new ActionListener(){        
+            
+            public void actionPerformed(ActionEvent e) {
+            changeGUI(); 
+        }
+        
+        });
+        
+        //listener = new BtnListener();
+        //btnLogin.addActionListener(listener);
+        
         btnPanel.setBackground(Color.black);
         
+      
         btnPanel.add(btnLogin);
         btnPanel.add(btnRegister);
         
@@ -72,7 +94,24 @@ public class LoginPanel extends JPanel {
         
         this.add(txtPanel);
         this.add(btnPanel);
-        
     }
-}
 
+
+   /**
+     * An actionlistener that checks which button is pressed
+     * and either starts a new game or quits the program
+     */
+
+    /*private class BtnListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+
+            changeGUI(); 
+        }
+    }   */
+   
+   public void  changeGUI(){
+       arenaFrame.setGUI(arenaFrame);
+   }
+
+}

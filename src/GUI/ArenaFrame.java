@@ -31,7 +31,16 @@ import javax.swing.border.EmptyBorder;
  */
 public class ArenaFrame extends JFrame {
     private String path;
-
+    private int gui = 0;
+    private JLabel arenaLogo;
+    private ImageIcon icon = null;
+    private BufferedImage myPicture = null;
+    private LoginPanel loginPanel;
+    private Box logoBox;
+    private Box loginPanelBox;
+    private Box advertiserPanelBox;
+    private Box playerPanelBox;
+    
     public static void main(String[]args){
         
         new ArenaFrame();
@@ -40,12 +49,7 @@ public class ArenaFrame extends JFrame {
     
     public ArenaFrame() {
         super();
-        JLabel arenaLogo;
-        ImageIcon icon = null;
-        BufferedImage myPicture = null;
-        Box logoBox;
-        Box loginPanelBox;
-        
+
         path = "img\\arena_logo.png";
         
         try {
@@ -55,19 +59,20 @@ public class ArenaFrame extends JFrame {
             // handle exception
         }
                         
-        
         setLayout(new BorderLayout());
 
+        /*
+         * Box for logotype
+         */
         arenaLogo = new JLabel(icon);
         logoBox = Box.createHorizontalBox();
         logoBox.add(arenaLogo);
-        
-        loginPanelBox = Box.createHorizontalBox();
-        loginPanelBox.add(new LoginPanel());
-        loginPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
-        
         this.add(logoBox, BorderLayout.PAGE_START);
+        
+        
+        loginPanelBox = createLoginPanelBox();
         this.add(loginPanelBox, BorderLayout.CENTER);
+        
         
         getContentPane().setBackground(Color.black);
         this.setSize(800,600);
@@ -75,8 +80,37 @@ public class ArenaFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
         this.setVisible(true);
-        
-        
 
+    }
+
+    
+    private Box createAdvertiserPanelBox(){
+        advertiserPanelBox = Box.createHorizontalBox();
+        advertiserPanelBox.add(new AdvertiserPanel());
+        advertiserPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
+        return advertiserPanelBox;
+    }
+    
+    private Box createPlayerPanelBox(){
+        playerPanelBox = Box.createHorizontalBox();
+        playerPanelBox.add(new PlayerPanel());
+        playerPanelBox.setBorder(new EmptyBorder(50, 150, 150, 150));
+        return playerPanelBox;
+    }
+    
+    private Box createLoginPanelBox(){
+        loginPanelBox = Box.createHorizontalBox();
+        loginPanel = new LoginPanel(this);
+        loginPanelBox.add(loginPanel);
+        loginPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
+        return loginPanelBox;
+    }
+    
+    public void setGUI(ArenaFrame arenaFrame){
+        System.out.println("lololo");
+        advertiserPanelBox = createAdvertiserPanelBox();
+        arenaFrame.remove(loginPanelBox);
+        arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
+        repaint();
     }
 }
