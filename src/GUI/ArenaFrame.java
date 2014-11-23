@@ -1,5 +1,7 @@
 package GUI;
 
+import general.Connection;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -30,13 +32,6 @@ import league.LeagueOwner;
  */
 public class ArenaFrame extends JFrame {
     private String path;
-
-    //TODO Create a suitable class for the main method.
-    public static void main(String[]args){
-        
-        new ArenaFrame();
-        new LeagueOwner("ownerName");
-    }
     
     public ArenaFrame() {
         super();
