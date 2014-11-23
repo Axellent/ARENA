@@ -1,27 +1,54 @@
 package general;
 
 /**
- * 
- * @author Axel Sigl
+ * A abstract class for a user containing name and password
+ * @author Albin Olausson
  *
  */
 public abstract class User {
-	private GeneralTools login;
-	private int ID;
 	private String name;
+	private String password;
+	private int id;
+	private GeneralTools login;
+	
+	public User(){
+		
+	}
+
+	
+	
 	
 	/**
-	 * Changes user ID.
-	 * @author Axel Sigl
-	 * @param ID
+	 * Returns the name 
+	 * @author Albin Olausson
+	 * @return
 	 */
-	public void setID(int ID){
-		this.ID = ID;
+	public String getName(){
+		return name;
+		
 	}
 	
+	
 	/**
-	 * Changes user name.
-	 * @author Axel Sigl
+	 * Returns the password
+	 * @author Albin Olausson
+	 * @return
+	 */
+	public String getPassword(){
+		return password;
+	}
+
+	/**
+	 * Returns the id
+	 * @author Andreas Lönnermark
+	 * @return
+	 */
+	public int getID(){
+		return id;
+	}
+
+	/**
+	 * @author Andreas Lönnermark
 	 * @param name
 	 */
 	public void setName(String name){
@@ -29,20 +56,21 @@ public abstract class User {
 	}
 	
 	/**
-	 * 
-	 * @author Axel Sigl
-	 * @return ID of the user.
+	 *
+	 *@author Albin Olausson
+	 * @param id
 	 */
-	public int getID(){
-		return ID;
+	public void setId(int id){
+		this.id = id;
 	}
 	
+	
 	/**
-	 * 
-	 * @author Axel Sigl
-	 * @return Name of the user.
+	 *
+	 *@author Albin Olausson
+	 * @param setPassword
 	 */
-	public String getName(){
-		return name;
+	public void setPassword(String setPassword){
+		this.password = password;
 	}
 }
