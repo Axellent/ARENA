@@ -53,4 +53,5 @@ public abstract class OperatorTools {
 	public void testGame() throws UnimplementedToolException{
 		throw new UnimplementedToolException("testGame");
 	}
+	
 }
