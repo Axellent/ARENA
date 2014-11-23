@@ -41,14 +41,26 @@ public class Connection {
 	 * @param cmd
 	 */
 	public void command(String cmd) {
+		String output = "";
 
 		try {
 			out.println(cmd);
+			
+			output = in.readLine();
+			System.out.println(output);
 
-			System.out.println(in.readLine());
-
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 
+	 * @author Axel Sigl
+	 */
+	public void closeConnection(){
+		try {
 			socket.close();
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

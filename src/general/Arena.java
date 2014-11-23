@@ -12,7 +12,7 @@ public class Arena {
 
     public static void main(String[]args){
         
-    	//new Connection().command("Test output");
+    	//new Connection().command("login testAccount testPassword 1");
         new ArenaFrame();
         new LeagueOwner("ownerName");
     }
