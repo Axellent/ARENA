@@ -32,16 +32,6 @@ import league.LeagueOwner;
  */
 public class ArenaFrame extends JFrame {
     private String path;
-    
-        
-    
-<<<<<<< .mine
-    private int gui = 0;
-    private JLabel arenaLogo;
-=======
-
-
->>>>>>> .theirs
     private int gui = 0;
     private JLabel arenaLogo;
     private ImageIcon icon = null;
@@ -50,37 +40,10 @@ public class ArenaFrame extends JFrame {
     private Box logoBox;
     private Box loginPanelBox;
     private Box advertiserPanelBox;
-    private Box playerPanelBox;<<<<<<< .mine
-    private BufferedImage myPicture = null;
-    private LoginPanel loginPanel;
-    private Box logoBox;
-    private Box loginPanelBox;
-    private Box advertiserPanelBox;
     private Box playerPanelBox;
-    
-    public static void main(String[]args){
-        
-        new ArenaFrame();
-        
-    }
-=======
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> .theirs
     
     public ArenaFrame() {
         super();
-
         
         String OS = System.getProperty("os.name").toLowerCase();
         
@@ -125,14 +88,14 @@ public class ArenaFrame extends JFrame {
     
     private Box createAdvertiserPanelBox(){
         advertiserPanelBox = Box.createHorizontalBox();
-        advertiserPanelBox.add(new AdvertiserPanel());
+        //advertiserPanelBox.add(new AdvertiserPanel());
         advertiserPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
         return advertiserPanelBox;
     }
     
     private Box createPlayerPanelBox(){
         playerPanelBox = Box.createHorizontalBox();
-        playerPanelBox.add(new PlayerPanel());
+        //playerPanelBox.add(new PlayerPanel());
         playerPanelBox.setBorder(new EmptyBorder(50, 150, 150, 150));
         return playerPanelBox;
     }
