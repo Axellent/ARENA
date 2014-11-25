@@ -7,44 +7,62 @@ import general.User;
  * @author Axel Sigl
  *
  */
+
 public class Player extends User{
-	private int ID;
+	private Game game;
 	private String name;
-	private PlayGame playGame;
+	private String password;
+	private int ID;
+	private int matchesPlayed;
+	private int matchesWon;
+	private int matchesLost;
+	private int ranking;
+	
+	
 	
 	/**
-	 * Changes player ID.
-	 * @author Axel Sigl
-	 * @param ID
+	 * @author Andreas Lönnermark
 	 */
-	public void setID(int ID){
-		this.ID = ID;
+	public Player(){
+		this.name = super.getName();
+		this.password = super.getPassword();
+		this.ID = super.getID();
 	}
 	
 	/**
-	 * Changes player name.
-	 * @author Axel Sigl
-	 * @param name
+	 * Returns the number of matches played
+	 * @author Andreas Lönnermark
+	 * @return
 	 */
-	public void setName(String name){
-		this.name = name;
+	public int getMatchesPlayed(){
+		return matchesPlayed;
+	}
+
+	/**
+	 * Returns the number of matches won
+	 * @author Andreas Lönnermark
+	 * @return
+	 */
+	public int getMatchesWon(){
+		return matchesWon;
+	}
+
+	/**
+	 * Returns the number of matches lost
+	 * @author Andreas Lönnermark
+	 * @return
+	 */
+	public int getMatchesLost(){
+		return matchesLost;
+	}
+
+	/**
+	 * Returns the ranking
+	 * @author Andreas Lönnermark
+	 * @return
+	 */
+	public int getRanking(){
+		return ranking;
 	}
 	
-	/**
-	 * 
-	 * @author Axel Sigl
-	 * @return Id of the player.
-	 */
-	public int getID(){
-		return ID;
-	}
-	
-	/**
-	 * 
-	 * @author Axel Sigl
-	 * @return Name of the player.
-	 */
-	public String getName(){
-		return name;
-	}
 }

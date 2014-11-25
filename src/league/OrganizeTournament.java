@@ -16,8 +16,8 @@ public class OrganizeTournament extends LeagueTools{
 	}
 	
 	@Override
-	public void createTournament(){
-		tournament = new Tournament("testname", 10, 2);
+	public void createTournament(LeagueOwner leagueOwner){
+		tournament = new Tournament(leagueOwner, null, "testname", 10, 2);
 		
 		try {
 			announceTournament.announceTournament(tournament);

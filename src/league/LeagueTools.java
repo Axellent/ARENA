@@ -10,7 +10,11 @@ import general.UnimplementedToolException;
  */
 public abstract class LeagueTools {
 	
-	public void createTournament() throws UnimplementedToolException{
+	public void startLeague(LeagueOwner leagueOwner) throws UnimplementedToolException{
+		throw new UnimplementedToolException("startLeague");
+	}
+	
+	public void createTournament(LeagueOwner leagueOwner) throws UnimplementedToolException{
 		throw new UnimplementedToolException("createTournament");
 	}
 	

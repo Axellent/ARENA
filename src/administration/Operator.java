@@ -11,13 +11,19 @@ import general.User;
  */
 public class Operator extends User{
 	private OperatorTools systemOnOff;
-
+	private OperatorTools handleUser;
 	/**
 	 * 
 	 * @author Axel Sigl
 	 */
-	public Operator(){
+	
+	public Operator(String name, String password, int id){
+		setName(name);
+		setPassword(password);
+		setId(id);
+		
 		systemOnOff = new SystemOnOff();
+		handleUser = new HandleUser();
 		
 		try {
 			systemOnOff.startSystem();
@@ -30,15 +36,4 @@ public class Operator extends User{
 	public boolean handleLeagueRequest(){
 		return true;
 	}
-
-	/**
-	 * 
-	 * @author Axel Sigl
-	 * @param args
-	 */
-	public static void main(String[] args){
-		new Operator();
-		new LeagueOwner();
-	}
-	
 }

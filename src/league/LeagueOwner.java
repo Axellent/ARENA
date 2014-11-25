@@ -11,17 +11,24 @@ import general.User;
 public class LeagueOwner extends User{
 	private LeagueTools organizeTournament;
 	private LeagueTools conductTournament;
-	private League[] leagues;
+	private LeagueTools handleLeague;
 	
-	public LeagueOwner(){
-		this.organizeTournament = new OrganizeTournament();
-		this.conductTournament = new ConductTournament();
+	public LeagueOwner(String name){
+		setName(name);
+		organizeTournament = new OrganizeTournament();
+		conductTournament = new ConductTournament();
+		handleLeague = new HandleLeague();
 		
 		//testing stuff
+		startLeague();
 		createTournament();
 		startTournament();
+		scheduleMatches();
+	}
+	
+	public void startLeague(){
 		try {
-			conductTournament.scheduleMatches();
+			handleLeague.startLeague(this);
 		} catch (UnimplementedToolException e) {
 			e.printStackTrace();
 		}
@@ -29,7 +36,7 @@ public class LeagueOwner extends User{
 	
 	public void createTournament(){
 		try {
-			organizeTournament.createTournament();
+			organizeTournament.createTournament(this);
 		} catch (UnimplementedToolException e) {
 			e.printStackTrace();
 		}
@@ -38,6 +45,14 @@ public class LeagueOwner extends User{
 	public void startTournament(){
 		try {
 			conductTournament.startTournament(organizeTournament.getTournament());
+		} catch (UnimplementedToolException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void scheduleMatches(){
+		try {
+			conductTournament.scheduleMatches();
 		} catch (UnimplementedToolException e) {
 			e.printStackTrace();
 		}

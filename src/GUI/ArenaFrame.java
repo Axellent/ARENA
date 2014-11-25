@@ -1,19 +1,18 @@
 package GUI;
 
+import general.Connection;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
-
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.image.BufferedImage;
-
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-
 import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -23,6 +22,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import league.LeagueOwner;
+
 
 /**
  *
@@ -31,9 +32,25 @@ import javax.swing.border.EmptyBorder;
  */
 public class ArenaFrame extends JFrame {
     private String path;
+    
+        
+    
+<<<<<<< .mine
+    private int gui = 0;
+    private JLabel arenaLogo;
+=======
+
+
+>>>>>>> .theirs
     private int gui = 0;
     private JLabel arenaLogo;
     private ImageIcon icon = null;
+    private BufferedImage myPicture = null;
+    private LoginPanel loginPanel;
+    private Box logoBox;
+    private Box loginPanelBox;
+    private Box advertiserPanelBox;
+    private Box playerPanelBox;<<<<<<< .mine
     private BufferedImage myPicture = null;
     private LoginPanel loginPanel;
     private Box logoBox;
@@ -46,17 +63,39 @@ public class ArenaFrame extends JFrame {
         new ArenaFrame();
         
     }
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> .theirs
     
     public ArenaFrame() {
         super();
 
-        path = "img\\arena_logo.png";
+        
+        String OS = System.getProperty("os.name").toLowerCase();
+        
+        if(OS.indexOf("win") >= 0){
+        	path = "img\\arena_logo.png";
+        }
+        if(OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0 || OS.indexOf("aix") >= 0){
+        	path = "img/arena_logo.png";
+        }
         
         try {
             myPicture = ImageIO.read(new File(path));
             icon = new ImageIcon(myPicture);
         } catch (IOException ex) {
-            // handle exception
+
         }
                         
         setLayout(new BorderLayout());

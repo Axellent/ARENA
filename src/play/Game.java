@@ -5,7 +5,7 @@ package play;
  * @author Axel Sigl
  *
  */
-public class PlayGame{
+public class Game{
 
 	public void setupMatch(){
 		
