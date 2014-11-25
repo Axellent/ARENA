@@ -59,10 +59,7 @@ public class LoginPanel extends JPanel{
         btnRegister = new JButton("      Register");
         btnLogin = new JButton("     Log In");
         
-        //BtnListener lForButton = new BtnListener();
-
-        //btnLogin.addActionListener(lForButton);
-        //btnRegister.addActionListener(lForButton);
+        BtnListener listener = new BtnListener();
         
         btnRegister.setOpaque(true);
         btnRegister.setBackground(Color.green);
@@ -72,16 +69,10 @@ public class LoginPanel extends JPanel{
         btnLogin.setBackground(Color.green);
         btnLogin.setForeground(Color.white);
         
-        btnLogin.addActionListener(new ActionListener(){        
-            
-            public void actionPerformed(ActionEvent e) {
-            changeGUI(); 
-        }
+
         
-        });
-        
-        //listener = new BtnListener();
-        //btnLogin.addActionListener(listener);
+        listener = new BtnListener();
+        btnLogin.addActionListener(listener);
         
         btnPanel.setBackground(Color.black);
         
@@ -94,6 +85,13 @@ public class LoginPanel extends JPanel{
         
         this.add(txtPanel);
         this.add(btnPanel);
+        
+       /* btnLogin.addActionListener(new ActionListener(){        
+            
+            public void actionPerformed(ActionEvent e) {
+            changeGUI(); 
+        }
+        });*/
     }
 
 
@@ -102,16 +100,16 @@ public class LoginPanel extends JPanel{
      * and either starts a new game or quits the program
      */
 
-    /*private class BtnListener implements ActionListener {
+    private class BtnListener implements ActionListener {
 
         public void actionPerformed(ActionEvent e) {
 
             changeGUI(); 
         }
-    }   */
+    }   
    
    public void  changeGUI(){
-       arenaFrame.setGUI(arenaFrame);
+       arenaFrame.setGUI(this.arenaFrame);
    }
 
 }

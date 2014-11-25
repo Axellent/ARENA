@@ -70,7 +70,7 @@ public class ArenaFrame extends JFrame {
         this.add(logoBox, BorderLayout.PAGE_START);
         
         
-        loginPanelBox = createLoginPanelBox();
+        loginPanelBox = createLoginPanelBox(this);
         this.add(loginPanelBox, BorderLayout.CENTER);
         
         
@@ -98,9 +98,9 @@ public class ArenaFrame extends JFrame {
         return playerPanelBox;
     }
     
-    private Box createLoginPanelBox(){
+    private Box createLoginPanelBox(ArenaFrame arenaFrame){
         loginPanelBox = Box.createHorizontalBox();
-        loginPanel = new LoginPanel(this);
+        loginPanel = new LoginPanel(arenaFrame);
         loginPanelBox.add(loginPanel);
         loginPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
         return loginPanelBox;
@@ -111,6 +111,7 @@ public class ArenaFrame extends JFrame {
         advertiserPanelBox = createAdvertiserPanelBox();
         arenaFrame.remove(loginPanelBox);
         arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
-        repaint();
+        revalidate();
+        
     }
 }
