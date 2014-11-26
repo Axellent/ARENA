@@ -88,14 +88,14 @@ public class ArenaFrame extends JFrame {
     
     private Box createAdvertiserPanelBox(){
         advertiserPanelBox = Box.createHorizontalBox();
-        //advertiserPanelBox.add(new AdvertiserPanel());
+        advertiserPanelBox.add(new AdvertiserPanel());
         advertiserPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
         return advertiserPanelBox;
     }
     
     private Box createPlayerPanelBox(){
         playerPanelBox = Box.createHorizontalBox();
-        //playerPanelBox.add(new PlayerPanel());
+        playerPanelBox.add(new PlayerPanel());
         playerPanelBox.setBorder(new EmptyBorder(50, 150, 150, 150));
         return playerPanelBox;
     }
