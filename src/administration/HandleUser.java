@@ -39,8 +39,8 @@ public class HandleUser extends OperatorTools{
 		 switch(newType.toLowerCase()){ 
 		 case "player": new Player(name, password, id);
 		 		 break;
-		 case "leagueowner": new LeagueOwner(name, password, id);
-		 case "advertiser": new Advertiser(name, password, id);
+		 //case "leagueowner": new LeagueOwner(name, password, id);
+		 //case "advertiser": new Advertiser(name, password, id, int credits);
 		 //case 4: new Operator(name, password, id);	
 			 
  		 
@@ -57,4 +57,4 @@ public class HandleUser extends OperatorTools{
 	//	users[i] = users[i+1];
 	//}
 	
-}
+

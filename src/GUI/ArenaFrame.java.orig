@@ -42,8 +42,19 @@ public class ArenaFrame extends JFrame {
     private Box advertiserPanelBox;
     private Box playerPanelBox;
     
+    public static void main(String[]args){
+        
+        new ArenaFrame();
+        
+    }
+    
     public ArenaFrame() {
         super();
+        JLabel arenaLogo;
+        ImageIcon icon = null;
+        BufferedImage myPicture = null;
+        Box logoBox;
+        Box loginPanelBox;
         
         String OS = System.getProperty("os.name").toLowerCase();
         
@@ -53,6 +64,7 @@ public class ArenaFrame extends JFrame {
         if(OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0 || OS.indexOf("aix") >= 0){
         	path = "img/arena_logo.png";
         }
+
         
         try {
             myPicture = ImageIO.read(new File(path));
@@ -71,9 +83,7 @@ public class ArenaFrame extends JFrame {
         logoBox.add(arenaLogo);
         this.add(logoBox, BorderLayout.PAGE_START);
         
-        /*
-         * Box for login panel
-         */
+        
         loginPanelBox = createLoginPanelBox(this);
         this.add(loginPanelBox, BorderLayout.CENTER);
         
@@ -110,21 +120,13 @@ public class ArenaFrame extends JFrame {
         return loginPanelBox;
     }
     
-    public void setGUI(ArenaFrame arenaFrame, int userID){
-        
+    public void setGUI(ArenaFrame arenaFrame){
+        System.out.println("lololo");
+        advertiserPanelBox = createAdvertiserPanelBox();
         arenaFrame.remove(loginPanelBox);
-        
-        if(userID == 1){
-            advertiserPanelBox = createAdvertiserPanelBox();
-            arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
-        } else if(userID == 2){
-            playerPanelBox = createPlayerPanelBox();
-            arenaFrame.add(playerPanelBox, BorderLayout.CENTER);
-        } else {
-            advertiserPanelBox = createAdvertiserPanelBox();
-            arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
-        }
+        arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
         revalidate();
         
     }
 }
+
