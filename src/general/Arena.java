@@ -12,8 +12,8 @@ public class Arena {
 
     public static void main(String[]args){
         
-    	Connection connection = new Connection();
-    	connection.command("help");
+    	//Connection connection = new Connection();
+    	//connection.command("help");
     	//connection.closeConnection();
     	
         new ArenaFrame();

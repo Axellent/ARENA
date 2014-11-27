@@ -31,7 +31,7 @@ public class Connection {
 					socket.getOutputStream()), true);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Could not connect to the ARENA server");
 		}
 	}
 
@@ -50,8 +50,10 @@ public class Connection {
 			out.println(cmd);
 			
 			System.out.println(output);
-			output = in.readLine();
-			System.out.println(output);
+			
+			while(!(output = in.readLine()).equals(null)){
+				System.out.println(output);
+			}
 
 		} catch (IOException e) {
 			e.printStackTrace();
