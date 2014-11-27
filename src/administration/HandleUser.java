@@ -36,17 +36,16 @@ public class HandleUser extends OperatorTools{
 		 
 		 deleteUser(user); // ska man spara ner den gamla profilen och dess data så att den inte försvinner?
 		
-		 switch(newType.toLowerCase()){ 
+		 /*switch(newType.toLowerCase()){ 
 		 case "player": new Player(name, password, id);
 		 		 break;
 		 case "leagueowner": new LeagueOwner(name, password, id);
 		 case "advertiser": new Advertiser(name, password, id);
-		 //case 4: new Operator(name, password, id);	
-			 
+		 //case 4: new Operator(name, password, id);
  		 
 		 }
 	
-		 }
+		 }*/
 		
 	}
 	
