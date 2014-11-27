@@ -14,62 +14,37 @@ public class DefineAdvertisementScheme extends AdvertiserTools {
 	private Date startDate;
 	private Date stopDate;
 	private int leagueId;
-	private int tournamentId = -1;
-	int placement;
-	private Image ad;
-	private double price;
-	private int userId;
-	
-	public void DefineAdvertismentScheme(Date startDate, Date stopDate, int leagueId, int placement, double price) {
-		this.startDate= startDate;
+	private int tournamentId;
+	private Image image;
+
+	public void DefineAdvertismentScheme(Date startDate, Date stopDate,
+			int leagueId, Image image, int tournamentId) {
+		
+		this.startDate = startDate;
 		this.stopDate = stopDate;
 		this.leagueId = leagueId;
-		this.placement = placement;
-		this.price = price;
-		
-	}
-
-
-	public void setTournamentId(int tournamentId){
 		this.tournamentId = tournamentId;
+		this.image = image;
+
 	}
-	
-	private void setAd(Image ad){
-		this.ad = ad;
-	}
-	
-		
-	public Date getStartDate(){
+
+	public Date getStartDate() {
 		return startDate;
 	}
-	
-	public Date getStopDate(){
+
+	public Date getStopDate() {
 		return stopDate;
 	}
-	
-	public int getLeagueId(){
+
+	public int getLeagueId() {
 		return leagueId;
 	}
-	
-	public int getTournamentId(){
+
+	public int getTournamentId() {
 		return tournamentId;
 	}
-	
-	
-	public int getPlacement(){
-		return placement;
-	}
-	
-	public Image getAd(){
-		return ad;
-	}
-	public double getPrice(){
-		return price;
-	}
-	
 
-	
-	
-
-
+	public Image getAd() {
+		return image;
+	}
 }

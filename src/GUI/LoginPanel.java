@@ -5,6 +5,7 @@ import java.awt.Color;
 
 import GUI.ArenaFrame;
 import java.awt.GridLayout;
+import general.User;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,6 +31,7 @@ public class LoginPanel extends JPanel{
     private JButton btnRegister;
     private ArenaFrame arenaFrame;
     //private BtnListener listener;
+    private User user;
     
     public LoginPanel(ArenaFrame arenaFrame) {
         super();
@@ -109,7 +111,7 @@ public class LoginPanel extends JPanel{
     }   
    
    public void  changeGUI(){
-       arenaFrame.setGUI(this.arenaFrame);
+       arenaFrame.setGUI(this.arenaFrame, user);
    }
 
 }

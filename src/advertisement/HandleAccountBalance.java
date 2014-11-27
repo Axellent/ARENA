@@ -14,10 +14,13 @@ public class HandleAccountBalance {
  * @author Albin Olausson    
  * @param credits
  */
-    public HandleAccountBalance(int credits){
-      this.credits = credits; 
+    public HandleAccountBalance(){
+    
     }
     
+    public void setCredits(int credits){
+    	this.credits = credits;
+    }
     
     /**
      * Returns the  credits

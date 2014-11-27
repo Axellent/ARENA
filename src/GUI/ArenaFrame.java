@@ -1,6 +1,8 @@
 package GUI;
 
 import general.Connection;
+import general.HandleLogin;
+import general.User;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -24,96 +26,126 @@ import javax.swing.border.EmptyBorder;
 
 import league.LeagueOwner;
 
-
 /**
  *
  * @author Stella Wallin
  *
  */
 public class ArenaFrame extends JFrame {
-    private String path;
-    private int gui = 0;
-    private JLabel arenaLogo;
-    private ImageIcon icon = null;
-    private BufferedImage myPicture = null;
-    private LoginPanel loginPanel;
-    private Box logoBox;
-    private Box loginPanelBox;
-    private Box advertiserPanelBox;
-    private Box playerPanelBox;
-    
-    public ArenaFrame() {
-        super();
-        
-        String OS = System.getProperty("os.name").toLowerCase();
-        
-        if(OS.indexOf("win") >= 0){
-        	path = "img\\arena_logo.png";
-        }
-        if(OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0 || OS.indexOf("aix") >= 0){
-        	path = "img/arena_logo.png";
-        }
-        
-        try {
-            myPicture = ImageIO.read(new File(path));
-            icon = new ImageIcon(myPicture);
-        } catch (IOException ex) {
+	private String path;
+	private int gui = 0;
+	private JLabel arenaLogo;
+	private ImageIcon icon = null;
+	private BufferedImage myPicture = null;
+	private LoginPanel loginPanel;
+	private Box logoBox;
+	private Box loginPanelBox;
+	private Box advertiserPanelBox;
+	private Box playerPanelBox;
+	private int id;
+	private int userDigit;
+	private HandleLogin handleLogin = new HandleLogin();
+	private Box box;
 
-        }
-                        
-        setLayout(new BorderLayout());
+	public ArenaFrame() {
+		super();
 
-        /*
-         * Box for logotype
-         */
-        arenaLogo = new JLabel(icon);
-        logoBox = Box.createHorizontalBox();
-        logoBox.add(arenaLogo);
-        this.add(logoBox, BorderLayout.PAGE_START);
-        
-        
-        loginPanelBox = createLoginPanelBox(this);
-        this.add(loginPanelBox, BorderLayout.CENTER);
-        
-        
-        getContentPane().setBackground(Color.black);
-        this.setSize(800,600);
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setResizable(false);
-        this.setVisible(true);
+		String OS = System.getProperty("os.name").toLowerCase();
 
-    }
+		if (OS.indexOf("win") >= 0) {
+			path = "img\\arena_logo.png";
+		}
+		if (OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0
+				|| OS.indexOf("aix") >= 0) {
+			path = "img/arena_logo.png";
+		}
 
-    
-    private Box createAdvertiserPanelBox(){
-        advertiserPanelBox = Box.createHorizontalBox();
-        //advertiserPanelBox.add(new AdvertiserPanel());
-        advertiserPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
-        return advertiserPanelBox;
-    }
-    
-    private Box createPlayerPanelBox(){
-        playerPanelBox = Box.createHorizontalBox();
-        //playerPanelBox.add(new PlayerPanel());
-        playerPanelBox.setBorder(new EmptyBorder(50, 150, 150, 150));
-        return playerPanelBox;
-    }
-    
-    private Box createLoginPanelBox(ArenaFrame arenaFrame){
-        loginPanelBox = Box.createHorizontalBox();
-        loginPanel = new LoginPanel(arenaFrame);
-        loginPanelBox.add(loginPanel);
-        loginPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
-        return loginPanelBox;
-    }
-    
-    public void setGUI(ArenaFrame arenaFrame){
-        System.out.println("lololo");
-        advertiserPanelBox = createAdvertiserPanelBox();
-        arenaFrame.remove(loginPanelBox);
-        arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
-        revalidate();
-        
-    }
+		try {
+			myPicture = ImageIO.read(new File(path));
+			icon = new ImageIcon(myPicture);
+		} catch (IOException ex) {
+
+		}
+
+		setLayout(new BorderLayout());
+
+		/*
+		 * Box for logotype
+		 */
+		arenaLogo = new JLabel(icon);
+		logoBox = Box.createHorizontalBox();
+		logoBox.add(arenaLogo);
+		this.add(logoBox, BorderLayout.PAGE_START);
+
+		loginPanelBox = createLoginPanelBox(this);
+		this.add(loginPanelBox, BorderLayout.CENTER);
+
+		getContentPane().setBackground(Color.black);
+		this.setSize(800, 600);
+		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setResizable(false);
+		this.setVisible(true);
+
+	}
+
+	public Box setGUIType(User user) {
+
+		id = user.getID();
+		userDigit = handleLogin.getUserType(id);
+		
+		switch (userDigit) {
+		case 1: {
+			box = createPlayerPanelBox();
+			break;
+		}
+
+		case 2: {
+			box = createAdvertiserPanelBox();
+			break;
+		}
+		/*
+		 * case 3:{ box =createLeagueOwnerPanel(); break;
+		 * 
+		 * } case 4: { }
+		 * 
+		 * box =createOperatorPanel(); default:{ box = createSpectatorPanel(); }
+		 */
+		}
+		return box;
+
+	}
+
+	private Box createAdvertiserPanelBox() {
+		advertiserPanelBox = Box.createHorizontalBox();
+		advertiserPanelBox.add(new AdvertiserPanel());
+		advertiserPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
+		return advertiserPanelBox;
+	}
+
+	private Box createPlayerPanelBox() {
+		playerPanelBox = Box.createHorizontalBox();
+		playerPanelBox.add(new PlayerPanel());
+		playerPanelBox.setBorder(new EmptyBorder(50, 150, 150, 150));
+		return playerPanelBox;
+	}
+
+	private Box createLoginPanelBox(ArenaFrame arenaFrame) {
+		loginPanelBox = Box.createHorizontalBox();
+		loginPanel = new LoginPanel(arenaFrame);
+		loginPanelBox.add(loginPanel);
+		loginPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
+		return loginPanelBox;
+	}
+
+	public void setGUI(ArenaFrame arenaFrame, User user) {
+		System.out.println("lololo");
+		box = setGUIType(user);
+		// advertiserPanelBox = createAdvertiserPanelBox();
+		arenaFrame.remove(loginPanelBox);
+		// arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
+		arenaFrame.add(box, BorderLayout.CENTER);
+		revalidate();
+
+	}
 }

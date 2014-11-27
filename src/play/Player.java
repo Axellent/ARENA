@@ -23,7 +23,7 @@ public class Player extends User{
 	/**
 	 * @author Andreas Lönnermark
 	 */
-	public Player(){
+	public Player(String name, String password, int ID){
 		this.name = super.getName();
 		this.password = super.getPassword();
 		this.ID = super.getID();
