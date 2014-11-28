@@ -41,6 +41,9 @@ public class ArenaFrame extends JFrame {
     private Box loginPanelBox;
     private Box advertiserPanelBox;
     private Box playerPanelBox;
+    private Box leagueOwnerPanelBox;
+    private Box operatorPanelBox;
+    
     
     public ArenaFrame() {
         super();
@@ -88,18 +91,34 @@ public class ArenaFrame extends JFrame {
     }
 
     
-    private Box createAdvertiserPanelBox(){
-        advertiserPanelBox = Box.createHorizontalBox();
-        advertiserPanelBox.add(new AdvertiserPanel());
-        advertiserPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
-        return advertiserPanelBox;
-    }
+
     
     private Box createPlayerPanelBox(){
         playerPanelBox = Box.createHorizontalBox();
         playerPanelBox.add(new PlayerPanel());
         playerPanelBox.setBorder(new EmptyBorder(50, 150, 150, 150));
         return playerPanelBox;
+    }
+    
+    private Box createLeagueOwnerPanelBox(){
+        leagueOwnerPanelBox = Box.createHorizontalBox();
+        leagueOwnerPanelBox.add(new LeagueOwnerPanel());
+        leagueOwnerPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
+        return leagueOwnerPanelBox;
+    }
+    
+    private Box createOperatorPanelBox(){
+        operatorPanelBox = Box.createHorizontalBox();
+        operatorPanelBox.add(new OperatorPanel());
+        operatorPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
+        return operatorPanelBox;
+    }
+    
+    private Box createAdvertiserPanelBox(){
+        advertiserPanelBox = Box.createHorizontalBox();
+        advertiserPanelBox.add(new AdvertiserPanel());
+        advertiserPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
+        return advertiserPanelBox;
     }
     
     private Box createLoginPanelBox(ArenaFrame arenaFrame){
@@ -120,9 +139,14 @@ public class ArenaFrame extends JFrame {
         } else if(userID == 2){
             playerPanelBox = createPlayerPanelBox();
             arenaFrame.add(playerPanelBox, BorderLayout.CENTER);
+        } else if (userID == 3){
+            operatorPanelBox = createOperatorPanelBox();
+            arenaFrame.add(operatorPanelBox, BorderLayout.CENTER);
+        }else if (userID == 4){
+            leagueOwnerPanelBox = createLeagueOwnerPanelBox();
+            arenaFrame.add(leagueOwnerPanelBox, BorderLayout.CENTER);
         } else {
-            advertiserPanelBox = createAdvertiserPanelBox();
-            arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
+            System.out.println("funkint");
         }
         revalidate();
         

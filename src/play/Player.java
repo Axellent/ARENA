@@ -10,9 +10,6 @@ import general.User;
 
 public class Player extends User{
 	private Game game;
-	private String name;
-	private String password;
-	private int ID;
 	private int matchesPlayed;
 	private int matchesWon;
 	private int matchesLost;
@@ -24,9 +21,9 @@ public class Player extends User{
 	 * @author Andreas Lönnermark
 	 */
 	public Player(String name, String password, int id){
-		this.name = super.getName();
-		this.password = super.getPassword();
-		this.ID = super.getID();
+	    setName(name);
+	    setPassword(password);
+	    setId(id);
 	}
 	
 	/**

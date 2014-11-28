@@ -14,6 +14,8 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
+import league.LeagueOwner;
+
 import play.Player;
 
 /**
@@ -28,16 +30,19 @@ public class HandleLogin extends GeneralTools implements Serializable {
     private User user1;
     private User user2;
     private User user3;
+    private User user4;
         
-	public void HandleLogin() {
+	public HandleLogin() {
                 
 	    user1 = new Advertiser("Advertiser1", "oglog", 11, 12);
             user2 = new Player("Player1", "shhoo", 12);
-            user2 = new Operator("Operator1", "likks", 13);
+            user3 = new Operator("Operator1", "likks", 13);
+	    user4 = new LeagueOwner("LeagueOwner1", "poop", 14);
             
             userList.add(user1);
 	    userList.add(user2);
 	    userList.add(user3);
+	    userList.add(user4);
             
         try{
             saveUserRegister();
@@ -57,10 +62,10 @@ public class HandleLogin extends GeneralTools implements Serializable {
     }
         
    public int getUserID(String userName) {
-       //IF: UserName exists in our list -> Return the userName.
-       for (User d : userList) {
-           if (d.getName().equals(userName)) {
-               return d.getID();
+       //IF: UserName exists in our list -> Return the user ID.
+       for (User u : userList) {
+           if (u.getName().equals(userName)) {
+               return u.getID();
            }
        }
 

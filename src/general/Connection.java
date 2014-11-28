@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 /**
- * 
+ * A socket connection to the ARENA server.
  * @author Axel Sigl
  *
  */
@@ -18,7 +18,7 @@ public class Connection {
 	private PrintWriter out;
 
 	/**
-	 * 
+	 * Initializes socket and IO streams for the connection.
 	 * @autor Axel Sigl
 	 */
 	public Connection() {
@@ -36,7 +36,10 @@ public class Connection {
 	}
 
 	/**
-	 * 
+	 * Sends a command to the server to parse.
+	 * Syntax: COMMAND [ARGUMENTS]
+	 * Example: login yourAccountName yourPassword
+	 * See "help" command for more information.
 	 * @author Axel Sigl
 	 * @param cmd
 	 */
@@ -46,6 +49,7 @@ public class Connection {
 		try {
 			out.println(cmd);
 			
+			System.out.println(output);
 			output = in.readLine();
 			System.out.println(output);
 
@@ -55,7 +59,7 @@ public class Connection {
 	}
 	
 	/**
-	 * 
+	 * Closes the socket connected to the server.
 	 * @author Axel Sigl
 	 */
 	public void closeConnection(){
