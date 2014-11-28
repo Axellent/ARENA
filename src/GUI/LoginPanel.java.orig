@@ -31,9 +31,11 @@ public class LoginPanel extends JPanel{
     private ArenaFrame arenaFrame;
     private HandleLogin handleLogin;
     //private BtnListener listener;
+    private HandleLogin handleLogin;
     
     public LoginPanel(ArenaFrame arenaFrame) {
         super();
+    
         
         this.arenaFrame = arenaFrame;
         
@@ -110,10 +112,17 @@ public class LoginPanel extends JPanel{
     }   
    
    public void  changeGUI(){
+<<<<<<< HEAD
+	    handleLogin = new HandleLogin();
+        int id;
+        String userName;
+        userName = txtUserName.getText();
+=======
         int id;
         String userName;
         userName = txtUserName.getText();
         handleLogin = new HandleLogin();
+>>>>>>> 8606c1b6254bbac09684740b133d2fa89709d9ba
        //String password = txtPassword.getText();
        id = handleLogin.getUserID(userName);
        id = id%10;

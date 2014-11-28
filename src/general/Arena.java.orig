@@ -17,6 +17,10 @@ public class Arena {
     	//connection.closeConnection();
     	
         new ArenaFrame();
+<<<<<<< HEAD
+      //  new LeagueOwner("ownerName");
+=======
         //new LeagueOwner("ownerName");
+>>>>>>> 8606c1b6254bbac09684740b133d2fa89709d9ba
     }
 }

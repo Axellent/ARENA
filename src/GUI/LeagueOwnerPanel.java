@@ -1,5 +1,8 @@
 package GUI;
 
+import java.awt.Color;
+import java.awt.GridLayout;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -14,9 +17,14 @@ public class LeagueOwnerPanel extends JPanel {
     private JButton btnCreate;
     
     public LeagueOwnerPanel() {
+        
         super();
         
+        this.setLayout(new GridLayout(1,2));
         leftPanel = new JPanel();
+        leftPanel.setBackground(Color.black);
+        leftPanel.setLayout(new GridLayout(4,1));
+        
         rightPanel = new JPanel();
         
         createNewTournament = new JLabel("Create new tournament");
@@ -35,6 +43,9 @@ public class LeagueOwnerPanel extends JPanel {
         leftPanel.add(leagueList);
         leftPanel.add(tournamentStyleList);
         leftPanel.add(btnCreate);
+        
+        this.add(leftPanel);
+        this.add(rightPanel);
         
         
     }
