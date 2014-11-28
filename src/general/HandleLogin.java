@@ -34,7 +34,7 @@ public class HandleLogin extends GeneralTools implements Serializable {
         
 	public HandleLogin() {
                 
-	    user1 = new Advertiser("Advertiser1", "oglog", 11, 12);
+	    user1 = new Advertiser("Advertiser1", "oglog", 11);
             user2 = new Player("Player1", "shhoo", 12);
             user3 = new Operator("Operator1", "likks", 13);
 	    user4 = new LeagueOwner("LeagueOwner1", "poop", 14);
