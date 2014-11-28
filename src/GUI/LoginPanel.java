@@ -4,15 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 
 import GUI.ArenaFrame;
+
+import general.HandleLogin;
+
 import java.awt.GridLayout;
-import general.User;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-import java.io.Serializable;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -31,10 +30,11 @@ public class LoginPanel extends JPanel{
     private JButton btnRegister;
     private ArenaFrame arenaFrame;
     //private BtnListener listener;
-    private User user;
+    private HandleLogin handleLogin;
     
     public LoginPanel(ArenaFrame arenaFrame) {
         super();
+    
         
         this.arenaFrame = arenaFrame;
         
@@ -111,7 +111,14 @@ public class LoginPanel extends JPanel{
     }   
    
    public void  changeGUI(){
-       arenaFrame.setGUI(this.arenaFrame, user);
+	    handleLogin = new HandleLogin();
+        int id;
+        String userName;
+        userName = txtUserName.getText();
+       //String password = txtPassword.getText();
+       id = handleLogin.getUserID(userName);
+       id = id%10;
+       arenaFrame.setGUI(this.arenaFrame, id);
    }
 
 }

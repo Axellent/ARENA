@@ -25,7 +25,6 @@ public class DefineAdvertisementScheme extends AdvertiserTools {
 		this.leagueId = leagueId;
 		this.tournamentId = tournamentId;
 		this.image = image;
-
 	}
 
 	public Date getStartDate() {

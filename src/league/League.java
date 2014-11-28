@@ -113,4 +113,13 @@ public class League {
 	public Player[] getPlayers(){
 		return players;
 	}
+	
+	/**
+	 * Returns maxplayers for a specific league
+	 *@author Albin Olausson
+	 * @return 
+	 */
+	public int getMaxPlayers(){
+		return maxPlayers;
+	}
 }

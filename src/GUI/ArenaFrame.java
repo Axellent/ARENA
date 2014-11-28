@@ -1,6 +1,6 @@
 package GUI;
 
-import general.Connection;
+//import general.Connection;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -71,7 +71,9 @@ public class ArenaFrame extends JFrame {
         logoBox.add(arenaLogo);
         this.add(logoBox, BorderLayout.PAGE_START);
         
-        
+        /*
+         * Box for login panel
+         */
         loginPanelBox = createLoginPanelBox(this);
         this.add(loginPanelBox, BorderLayout.CENTER);
         
@@ -108,11 +110,20 @@ public class ArenaFrame extends JFrame {
         return loginPanelBox;
     }
     
-    public void setGUI(ArenaFrame arenaFrame){
-        System.out.println("lololo");
-        advertiserPanelBox = createAdvertiserPanelBox();
+    public void setGUI(ArenaFrame arenaFrame, int userID){
+        
         arenaFrame.remove(loginPanelBox);
-        arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
+        
+        if(userID == 1){
+            advertiserPanelBox = createAdvertiserPanelBox();
+            arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
+        } else if(userID == 2){
+            playerPanelBox = createPlayerPanelBox();
+            arenaFrame.add(playerPanelBox, BorderLayout.CENTER);
+        } else {
+            advertiserPanelBox = createAdvertiserPanelBox();
+            arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
+        }
         revalidate();
         
     }
