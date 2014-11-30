@@ -1,6 +1,6 @@
 package GUI;
 
-import general.Connection;
+//import general.Connection;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -139,6 +139,11 @@ public class ArenaFrame extends JFrame {
         } else if(userID == 2){
             playerPanelBox = createPlayerPanelBox();
             arenaFrame.add(playerPanelBox, BorderLayout.CENTER);
+<<<<<<< HEAD
+        } else {
+            advertiserPanelBox = createAdvertiserPanelBox();
+            arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
+=======
         } else if (userID == 3){
             operatorPanelBox = createOperatorPanelBox();
             arenaFrame.add(operatorPanelBox, BorderLayout.CENTER);
@@ -147,6 +152,7 @@ public class ArenaFrame extends JFrame {
             arenaFrame.add(leagueOwnerPanelBox, BorderLayout.CENTER);
         } else {
             System.out.println("funkint");
+>>>>>>> 8606c1b6254bbac09684740b133d2fa89709d9ba
         }
         revalidate();
         

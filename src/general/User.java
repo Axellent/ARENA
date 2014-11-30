@@ -9,13 +9,12 @@ public abstract class User {
 	private String name;
 	private String password;
 	private int id;
-	private GeneralTools login;
+	//private GeneralTools login;
 	
 	public User(){
 		
 	}
 
-	
 	
 	
 	/**
