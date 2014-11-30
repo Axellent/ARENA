@@ -14,9 +14,9 @@ public class LeagueOwner extends User{
 	private LeagueTools handleLeague;
 	
 	public LeagueOwner(String name, String password, int id){
-                setName(name);
-                setPassword(password);
-                setId(id);
+        setName(name);
+        setPassword(password);
+        setId(id);
                 
 		organizeTournament = new OrganizeTournament();
 		conductTournament = new ConductTournament();
