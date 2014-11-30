@@ -18,12 +18,7 @@ public class LeagueOwner extends User{
 		organizeTournament = new OrganizeTournament();
 		conductTournament = new ConductTournament();
 		handleLeague = new HandleLeague();
-		
-		//testing stuff
-		startLeague();
-		createTournament();
-		startTournament();
-		scheduleMatches();
+
 	}
 	
 	public void startLeague(){
