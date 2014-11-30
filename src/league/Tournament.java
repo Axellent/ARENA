@@ -1,5 +1,7 @@
 package league;
 
+import java.io.Serializable;
+
 import play.Game;
 import play.Player;
 
@@ -8,7 +10,8 @@ import play.Player;
  * @author Axel Sigl
  *
  */
-public class Tournament {
+public class Tournament implements Serializable{
+	private static final long serialVersionUID = 3767491530162230060L;
 	private LeagueOwner leagueOwner;
 	private Game game;
 	private Schedule schedule;

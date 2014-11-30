@@ -1,6 +1,5 @@
 package general;
 
-import league.LeagueOwner;
 import GUI.ArenaFrame;
 
 /**
@@ -14,9 +13,9 @@ public class Arena {
         
     	//Connection connection = new Connection();
     	//connection.command("help");
+    	//connection.requestTournament("testTournament");
     	//connection.closeConnection();
     	
         new ArenaFrame();
-        //new LeagueOwner("ownerName");
     }
 }

@@ -7,6 +7,8 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import league.Tournament;
+
 /**
  * A socket connection to the ARENA server.
  * @author Axel Sigl
@@ -49,15 +51,28 @@ public class Connection {
 		try {
 			out.println(cmd);
 			
-			System.out.println(output);
-			
 			while(!(output = in.readLine()).equals(null)){
 				System.out.println(output);
 			}
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("Connection to the ARENA server interuppted");
 		}
+	}
+	
+	/**
+	 * 
+	 * @author Axel Sigl
+	 * @param name
+	 * @return
+	 */
+	public Tournament requestTournament(String name){
+		
+		out.println("-tournament " + name);
+		
+		//return tournament from server
+		
+		return null;
 	}
 	
 	/**

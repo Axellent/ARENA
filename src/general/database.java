@@ -26,7 +26,7 @@ public class database extends GeneralTools {
 	}
 	
 	public void saveLeague(int leagueId, League league){
-		leagues.add(leagueId, league);		
+		//leagues.add(leagueId, league);		
 	}
 	
 	public ArrayList getTournaments(){
@@ -38,7 +38,8 @@ public class database extends GeneralTools {
 	}
 	
 	public ArrayList getLeague(){
-		return leagues;
+		//return leagues;
+		return null;
 	}
 	
 	
