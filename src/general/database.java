@@ -9,7 +9,7 @@ public class database extends GeneralTools {
 
 	private ArrayList<Game> games = new ArrayList<Game>();
 	private ArrayList<Tournament> tournaments = new ArrayList<Tournament>(); 
-	private ArrayList<League> league = new ArrayList<League>(); 
+	private ArrayList<League> leagues = new ArrayList<League>(); 
 	//private ArrayList<HandleAdvertisement> ads = new ArrayList<HandleAdvertisement>();
 	
 	
