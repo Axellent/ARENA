@@ -1,6 +1,7 @@
 package general;
 
 import GUI.ArenaFrame;
+import general.Connection;
 
 /**
  * 
