@@ -1,6 +1,5 @@
 package advertisement;
 
-import java.awt.Image;
 import java.util.Date;
 
 /**
@@ -15,16 +14,16 @@ public class DefineAdvertisementScheme extends AdvertiserTools {
 	private Date stopDate;
 	private int leagueId;
 	private int tournamentId;
-	private Image image;
+
 
 	public void DefineAdvertismentScheme(Date startDate, Date stopDate,
-			int leagueId, Image image, int tournamentId) {
+			int leagueId, int tournamentId) {
 		
 		this.startDate = startDate;
 		this.stopDate = stopDate;
 		this.leagueId = leagueId;
 		this.tournamentId = tournamentId;
-		this.image = image;
+	
 	}
 
 	public Date getStartDate() {
@@ -43,7 +42,5 @@ public class DefineAdvertisementScheme extends AdvertiserTools {
 		return tournamentId;
 	}
 
-	public Image getAd() {
-		return image;
-	}
+
 }
