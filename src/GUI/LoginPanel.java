@@ -1,16 +1,16 @@
 package GUI;
 
 import java.awt.BorderLayout;
+import java.awt.Checkbox;
 import java.awt.Color;
 
 import GUI.ArenaFrame;
-
 import general.HandleLogin;
 
 import java.awt.GridLayout;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 
 import javax.swing.BorderFactory;
@@ -30,6 +30,7 @@ public class LoginPanel extends JPanel{
     private JButton btnRegister;
     private ArenaFrame arenaFrame;
     private HandleLogin handleLogin;
+    private JPanel checkBoxPanel;
     //private BtnListener listener;
     
     public LoginPanel(ArenaFrame arenaFrame) {
@@ -37,9 +38,17 @@ public class LoginPanel extends JPanel{
         
         this.arenaFrame = arenaFrame;
         
-        setLayout(new GridLayout(3, 0, 5, 2));
+        setLayout(new GridLayout(4, 0, 5, 2));
         
         this.setBackground(Color.black);
+        
+        checkBoxPanel = new JPanel();
+        checkBoxPanel.setLayout(new GridLayout(4,1));
+        
+        checkBoxPanel.add(new Checkbox("Advertiser", null, true));
+        checkBoxPanel.add(new Checkbox("Operator"));
+        checkBoxPanel.add(new Checkbox("League Owner"));
+        checkBoxPanel.add(new Checkbox("Player"));
         
         txtPanel = new JPanel();
         txtPanel.setLayout(new GridLayout(2,1));
@@ -66,6 +75,13 @@ public class LoginPanel extends JPanel{
         btnRegister.setBackground(Color.green);
         btnRegister.setForeground(Color.white);
         
+        btnRegister.addActionListener(new ActionListener(){        
+        
+        public void actionPerformed(ActionEvent e) {
+        //register(); 
+    }
+    });
+        
         btnLogin.setOpaque(true);
         btnLogin.setBackground(Color.green);
         btnLogin.setForeground(Color.white);
@@ -84,6 +100,7 @@ public class LoginPanel extends JPanel{
         txtPanel.add(txtUserName);
         txtPanel.add(txtPassword);
         
+        this.add(checkBoxPanel);
         this.add(txtPanel);
         this.add(btnPanel);
         
