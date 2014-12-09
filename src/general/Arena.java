@@ -13,7 +13,8 @@ public class Arena {
         
     	//Connection connection = new Connection();
     	//connection.command("help");
-    	//connection.requestTournament("testTournament");
+    	//System.out.println(connection.requestTournament("testTournament").getName());
+    	//connection.command("login testName testPassword");
     	//connection.closeConnection();
     	
         new ArenaFrame();

@@ -1,5 +1,7 @@
 package league;
 
+import java.io.Serializable;
+
 import general.UnimplementedToolException;
 import general.User;
 
