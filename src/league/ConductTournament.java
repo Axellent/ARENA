@@ -7,15 +7,17 @@ package league;
  */
 public class ConductTournament extends LeagueTools{
 	private Tournament tournament;
+	private Schedule schedule;
 	
 	@Override
 	public void startTournament(Tournament tournament){
 		this.tournament = tournament;
+		schedule = new Schedule();
 	}
 	
 	@Override
 	public void scheduleMatches(){
-		tournament.getSchedule().randomSchedule(tournament);
+		schedule.randomSchedule(tournament);
 	}
 	
 	@Override

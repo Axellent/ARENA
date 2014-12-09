@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.7" icons="true" automaticImage="PNG">  
+  <object id="1" language="java" name="advertisement.Advertiser" project="ARENAA" 
+    file="/ARENAA/src/advertisement/Advertiser.java" binary="false" label="advertiser" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="70" y="0"/>    
+    <execution id="2">      
+      <position height="63" width="82" x="5" y="99"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="63" width="82" x="5" y="174"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="63" width="82" x="5" y="254"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="63" width="82" x="5" y="339"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="63" width="82" x="5" y="411"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="63" width="82" x="5" y="497"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="121" width="82" x="5" y="568"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="63" width="82" x="5" y="700"/>    
+    </execution>    
+    <execution id="26">      
+      <position height="126" width="82" x="5" y="778"/>    
+    </execution>    
+    <execution id="29">      
+      <position height="63" width="82" x="5" y="921"/>    
+    </execution>  
+  </object>  
+  <object id="32" language="java" name="advertisement.HandleAccountBalance" project="ARENAA" 
+    file="/ARENAA/src/advertisement/HandleAccountBalance.java" binary="false" label="handleAccountBalance" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="70" y="0"/>    
+    <execution id="4">      
+      <position height="21" width="155" x="91" y="120"/>    
+    </execution>    
+    <execution id="7">      
+      <position height="21" width="155" x="91" y="195"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="21" width="155" x="91" y="275"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="21" width="155" x="91" y="360"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="21" width="155" x="91" y="432"/>    
+    </execution>    
+    <execution id="19">      
+      <position height="21" width="155" x="91" y="518"/>    
+    </execution>  
+  </object>  
+  <object id="33" language="java" name="advertisement.HandleAdvertisement" project="ARENAA" 
+    file="/ARENAA/src/advertisement/HandleAdvertisement.java" binary="false" label="&lt;static&gt;" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="70" y="0"/>    
+    <execution id="22">      
+      <position height="79" width="145" x="250" y="589"/>    
+    </execution>    
+    <execution id="25">      
+      <position height="21" width="145" x="250" y="721"/>    
+    </execution>    
+    <execution id="28">      
+      <position height="84" width="145" x="250" y="799"/>    
+    </execution>    
+    <execution id="31">      
+      <position height="21" width="145" x="250" y="942"/>    
+    </execution>    
+    <execution id="37">      
+      <position height="21" width="0" x="0" y="841"/>    
+    </execution>  
+  </object>  
+  <object id="38" language="java" name="advertisement.DefineAdvertisementScheme" project="ARENAA" 
+    file="/ARENAA/src/advertisement/DefineAdvertisementScheme.java" binary="false" label="newScheme" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="35">      
+      <position height="21" width="189" x="399" y="626"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="HandleAccountBalance()">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="deposit(int):boolean">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="9" operation="getCredits():int">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="12" operation="getCredits():int">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="15" operation="setCredits(int):void">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="18" operation="withdraw(int):boolean">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="19"/>  
+  </message>  
+  <message id="21" 
+    operation="createAdvertisementScheme(java.util.Date,java.util.Date,int,int):advertisement.DefineAdvertisementScheme">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="22"/>  
+  </message>  
+  <message id="24" operation="getPrice(advertisement.DefineAdvertisementScheme):double">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>  
+  <message id="27" operation="setAdImage(java.lang.String):void">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="28"/>  
+  </message>  
+  <message id="30" operation="getAdImage():java.awt.image.BufferedImage">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="31"/>  
+  </message>  
+  <message id="34" operation="DefineAdvertisementScheme()">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="35"/>  
+  </message>  
+  <message id="36" 
+    operation="resizeImage(java.awt.image.BufferedImage,int,java.lang.Integer,java.lang.Integer):java.awt.image.BufferedImage">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="37"/>  
+  </message>
+</sequence-diagram>

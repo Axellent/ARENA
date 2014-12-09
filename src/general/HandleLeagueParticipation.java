@@ -31,6 +31,7 @@ public class HandleLeagueParticipation extends GeneralTools {
 		if (league.getMaxPlayers() < count)
 
 			league.addPlayer(player);
+		
 		else System.out.println("League is full");
 
 	}

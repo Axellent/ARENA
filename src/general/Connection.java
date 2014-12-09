@@ -3,6 +3,8 @@ package general;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -16,8 +18,10 @@ import league.Tournament;
  */
 public class Connection {
 	private Socket socket;
-	private BufferedReader in;
-	private PrintWriter out;
+	private BufferedReader inputReader;
+	private PrintWriter outputWriter;
+	private ObjectInputStream objectInputStream;
+	private ObjectOutputStream objectOutputStream;
 
 	/**
 	 * Initializes socket and IO streams for the connection.
@@ -27,10 +31,8 @@ public class Connection {
 		try {
 			socket = new Socket("localhost", 12345);
 
-			in = new BufferedReader(new InputStreamReader(
-					socket.getInputStream()));
-			out = new PrintWriter(new OutputStreamWriter(
-					socket.getOutputStream()), true);
+			inputReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+			outputWriter = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
 
 		} catch (IOException e) {
 			System.out.println("Could not connect to the ARENA server");
@@ -44,20 +46,22 @@ public class Connection {
 	 * See "help" command for more information.
 	 * @author Axel Sigl
 	 * @param cmd
+	 * @return
 	 */
-	public void command(String cmd) {
+	public String command(String cmd) {
 		String output = "";
 
 		try {
-			out.println(cmd);
+			outputWriter.println(cmd);
 			
-			while(!(output = in.readLine()).equals(null)){
-				System.out.println(output);
+			while(!(output = inputReader.readLine()).equals(null)){
+				return output;
 			}
 
 		} catch (IOException e) {
 			System.out.println("Connection to the ARENA server interuppted");
 		}
+		return "";
 	}
 	
 	/**
@@ -68,9 +72,17 @@ public class Connection {
 	 */
 	public Tournament requestTournament(String name){
 		
-		out.println("-tournament " + name);
+		outputWriter.println("-tournament " + name);
 		
-		//return tournament from server
+		try {
+			objectInputStream = new ObjectInputStream(socket.getInputStream());
+			return (Tournament) objectInputStream.readObject();
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		
 		return null;
 	}

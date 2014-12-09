@@ -1,11 +1,13 @@
 package general;
 
+import java.io.Serializable;
+
 /**
  * A abstract class for a user containing name and password
  * @author Albin Olausson
  *
  */
-public abstract class User {
+public abstract class User{;
 	private String name;
 	private String password;
 	private int id;
@@ -15,7 +17,6 @@ public abstract class User {
 		
 	}
 
-	
 	
 	/**
 	 * Returns the name 

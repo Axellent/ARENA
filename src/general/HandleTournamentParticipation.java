@@ -31,7 +31,7 @@ public class HandleTournamentParticipation extends GeneralTools{
 		count = countPlayersinTournament(tournament);
 		
 		if (tournament.getMaxPlayers() < count)
-
+			
 			tournament.addPlayer(player);
 		
 		else System.out.println("Tournament is full");
@@ -41,7 +41,7 @@ public class HandleTournamentParticipation extends GeneralTools{
 	
 	/**
 	 * 
-	 *count's the players allready in the tournament.
+	 *counts the players already in the tournament.
 	 *@author Albin Olausson
 	 * @param league
 	 * @return count

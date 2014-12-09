@@ -11,10 +11,9 @@ import play.Player;
  *
  */
 public class Tournament implements Serializable{
-	private static final long serialVersionUID = 3767491530162230060L;
-	private LeagueOwner leagueOwner;
+	private static final long serialVersionUID = -1430921976049567778L;
+	private String leagueOwner;
 	private Game game;
-	private Schedule schedule;
 	private String name;
 	private int minPlayers;
 	private int maxPlayers;
@@ -24,22 +23,25 @@ public class Tournament implements Serializable{
 	/**
 	 * Creates a new Tournament object with the default amount of minPlayers.
 	 * @author Axel Sigl
+	 * @param leagueOwner
+	 * @param game
 	 * @param name
 	 * @param maxPlayers
 	 */
-	public Tournament(LeagueOwner leagueOwner, Game game, String name, int maxPlayers){
+	public Tournament(String leagueOwner, Game game, String name, int maxPlayers){
 		new Tournament(leagueOwner, game, name, maxPlayers, 1);
 	}
 	
 	/**
 	 * Creates a Tournament object with the given parameters.
 	 * @author Axel Sigl
+	 * @param leagueOwner
+	 * @param game
 	 * @param name
 	 * @param maxPlayers
 	 * @param minPlayers
 	 */
-	public Tournament(LeagueOwner leagueOwner, Game game, String name, int maxPlayers, int minPlayers){
-		schedule = new Schedule();
+	public Tournament(String leagueOwner, Game game, String name, int maxPlayers, int minPlayers){
 		this.leagueOwner = leagueOwner;
 		this.game = game;
 		this.name = name;
@@ -87,10 +89,6 @@ public class Tournament implements Serializable{
 		}
 	}
 	
-	public void scheduleMatches(){
-		schedule.randomSchedule(this);
-	}
-	
 	/**
 	 * Changes tournament name.
 	 * @author Axel Sigl
@@ -116,15 +114,6 @@ public class Tournament implements Serializable{
 	 */
 	public void setMaxPlayers(int maxPlayers){
 		this.maxPlayers = maxPlayers;
-	}
-	
-	/**
-	 * 
-	 * @author Axel Sigl
-	 * @return Schedule for the tournament.
-	 */
-	public Schedule getSchedule(){
-		return schedule;
 	}
 	
 	/**

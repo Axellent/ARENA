@@ -26,6 +26,7 @@ public class Advertiser extends User {
 		setPassword(password);
 		setId(id);
 		
+		
 
 	}
 
