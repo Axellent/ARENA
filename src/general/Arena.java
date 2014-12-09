@@ -1,6 +1,6 @@
 package general;
 
-import GUI.ArenaFrame;
+import GUI.Controller;
 import general.Connection;
 
 /**
@@ -9,12 +9,14 @@ import general.Connection;
  *
  */
 public class Arena {
+	
 
     public static void main(String[]args){
-    	
-    	new ArenaFrame();
         
+    	
+    	
     	Connection connection = new Connection();
+    	new Controller(connection);
     	connection.command("help");
     	connection.requestTournament("testTournament");
     	connection.closeConnection();

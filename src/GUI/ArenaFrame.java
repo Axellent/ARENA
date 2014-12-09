@@ -38,7 +38,7 @@ public class ArenaFrame extends JFrame {
     private BufferedImage myPicture = null;
     private LoginPanel loginPanel;
     private Box logoBox;
-    private Box loginPanelBox;
+    Box loginPanelBox;
     private Box advertiserPanelBox;
     private Box playerPanelBox;
     private Box leagueOwnerPanelBox;
@@ -73,12 +73,13 @@ public class ArenaFrame extends JFrame {
         logoBox = Box.createHorizontalBox();
         logoBox.add(arenaLogo);
         this.add(logoBox, BorderLayout.PAGE_START);
-        
-        /*
+       
+       /*
          * Box for login panel
-         */
+         *//*
         loginPanelBox = createLoginPanelBox(this);
         this.add(loginPanelBox, BorderLayout.CENTER);
+        */
         
         
         getContentPane().setBackground(Color.black);
@@ -93,62 +94,41 @@ public class ArenaFrame extends JFrame {
     
 
     
-    private Box createPlayerPanelBox(){
+    public Box getPlayerPanelBox(){
         playerPanelBox = Box.createHorizontalBox();
-        playerPanelBox.add(new PlayerPanel());
+        //playerPanelBox.add(new PlayerPanel());
         playerPanelBox.setBorder(new EmptyBorder(50, 150, 150, 150));
         return playerPanelBox;
     }
     
-    private Box createLeagueOwnerPanelBox(){
+    public Box getLeagueOwnerPanelBox(){
         leagueOwnerPanelBox = Box.createHorizontalBox();
-        leagueOwnerPanelBox.add(new LeagueOwnerPanel());
+        //leagueOwnerPanelBox.add(new LeagueOwnerPanel());
         leagueOwnerPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
         return leagueOwnerPanelBox;
     }
     
-    private Box createOperatorPanelBox(){
+    public Box getOperatorPanelBox(){
         operatorPanelBox = Box.createHorizontalBox();
-        operatorPanelBox.add(new OperatorPanel());
+        //operatorPanelBox.add(new OperatorPanel());
         operatorPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
         return operatorPanelBox;
     }
     
-    private Box createAdvertiserPanelBox(){
+    public Box getAdvertiserPanelBox(){
         advertiserPanelBox = Box.createHorizontalBox();
-        advertiserPanelBox.add(new AdvertiserPanel());
+        //advertiserPanelBox.add(new AdvertiserPanel());
         advertiserPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
         return advertiserPanelBox;
     }
     
-    private Box createLoginPanelBox(ArenaFrame arenaFrame){
+    public Box getLoginPanelBox(){
         loginPanelBox = Box.createHorizontalBox();
-        loginPanel = new LoginPanel(arenaFrame);
-        loginPanelBox.add(loginPanel);
+        //loginPanel = new LoginPanel();
+        //loginPanelBox.add(loginPanel);
         loginPanelBox.setBorder(new EmptyBorder(50, 200, 200, 200));
         return loginPanelBox;
     }
     
-    public void setGUI(ArenaFrame arenaFrame, int userID){
-        
-        arenaFrame.remove(loginPanelBox);
-        
-        if(userID == 1){
-            advertiserPanelBox = createAdvertiserPanelBox();
-            arenaFrame.add(advertiserPanelBox, BorderLayout.CENTER);
-        } else if(userID == 2){
-            playerPanelBox = createPlayerPanelBox();
-            arenaFrame.add(playerPanelBox, BorderLayout.CENTER);
-        } else if (userID == 3){
-            operatorPanelBox = createOperatorPanelBox();
-            arenaFrame.add(operatorPanelBox, BorderLayout.CENTER);
-        }else if (userID == 4){
-            leagueOwnerPanelBox = createLeagueOwnerPanelBox();
-            arenaFrame.add(leagueOwnerPanelBox, BorderLayout.CENTER);
-        } else {
-            System.out.println("funkint");
-        }
-        revalidate();
-        
-    }
+
 }
