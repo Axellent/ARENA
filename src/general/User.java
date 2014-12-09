@@ -18,7 +18,6 @@ public abstract class User{;
 	}
 
 	
-	
 	/**
 	 * Returns the name 
 	 * @author Albin Olausson
