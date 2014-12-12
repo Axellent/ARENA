@@ -26,6 +26,7 @@ public class LeagueOwnerPanel extends JPanel {
         leftPanel.setLayout(new GridLayout(4,1));
         
         rightPanel = new JPanel();
+        rightPanel.setBackground(Color.black);
         
         createNewTournament = new JLabel("Create new tournament");
         

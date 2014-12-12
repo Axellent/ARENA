@@ -1,23 +1,14 @@
 package GUI;
 
-import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.Color;
-
-import GUI.ArenaFrame;
-import general.HandleLogin;
-
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
-
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -32,11 +23,12 @@ public class LoginPanel extends JPanel{
     private JButton btnRegister;
     private JPanel checkBoxPanel;
     private CheckboxGroup checkBoxGroup;
+    private JLabel lblRegister;
     
     public LoginPanel() {
         super();
         
-        setLayout(new GridLayout(4, 0, 5, 2));
+        setLayout(new GridLayout(5, 0, 5, 2));
         
         this.setBackground(Color.black);
         
@@ -54,7 +46,7 @@ public class LoginPanel extends JPanel{
         c.setCheckboxGroup(checkBoxGroup);
         checkBoxPanel.add(c = new Checkbox("Player"));
         c.setCheckboxGroup(checkBoxGroup);
-        checkBoxPanel.add(c = new Checkbox("League Owner"));
+        checkBoxPanel.add(c = new Checkbox("LeagueOwner"));
         c.setCheckboxGroup(checkBoxGroup);
         
         
@@ -93,9 +85,13 @@ public class LoginPanel extends JPanel{
         txtPanel.add(txtUsername);
         txtPanel.add(txtPassword);
         
+        lblRegister = new JLabel("To register please choose user type:");
+        
         this.add(txtPanel);
         this.add(btnPanel);
+        this.add(lblRegister);
         this.add(checkBoxPanel);
+        
         
     }
     
