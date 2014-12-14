@@ -1,21 +1,14 @@
 package GUI;
 
-import java.awt.BorderLayout;
+import java.awt.Checkbox;
+import java.awt.CheckboxGroup;
 import java.awt.Color;
-
-import GUI.ArenaFrame;
-
-import general.HandleLogin;
-
 import java.awt.GridLayout;
-
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -24,32 +17,49 @@ public class LoginPanel extends JPanel{
     
     private JPanel txtPanel;
     private JPanel btnPanel;
-    private JTextField txtUserName;
+    private JTextField txtUsername;
     private JTextField txtPassword;
     private JButton btnLogin;
     private JButton btnRegister;
-    private ArenaFrame arenaFrame;
-    private HandleLogin handleLogin;
-    //private BtnListener listener;
+    private JPanel checkBoxPanel;
+    private CheckboxGroup checkBoxGroup;
+    private JLabel lblRegister;
     
-    public LoginPanel(ArenaFrame arenaFrame) {
+    public LoginPanel() {
         super();
         
-        this.arenaFrame = arenaFrame;
-        
-        setLayout(new GridLayout(3, 0, 5, 2));
+        setLayout(new GridLayout(5, 0, 5, 2));
         
         this.setBackground(Color.black);
+        
+        checkBoxPanel = new JPanel();
+        checkBoxPanel.setLayout(new GridLayout(1,4));
+        checkBoxPanel.setBackground(Color.black);
+        
+        checkBoxGroup = new CheckboxGroup();
+        Checkbox c;
+        
+        
+        checkBoxPanel.add(c = new Checkbox("Advertiser"));
+        c.setCheckboxGroup(checkBoxGroup);
+        checkBoxPanel.add(c = new Checkbox("Operator"));
+        c.setCheckboxGroup(checkBoxGroup);
+        checkBoxPanel.add(c = new Checkbox("Player"));
+        c.setCheckboxGroup(checkBoxGroup);
+        checkBoxPanel.add(c = new Checkbox("LeagueOwner"));
+        c.setCheckboxGroup(checkBoxGroup);
+        
+        
         
         txtPanel = new JPanel();
         txtPanel.setLayout(new GridLayout(2,1));
         
-        txtUserName = new JTextField("  Enter user name: ", 15);
+        txtUsername = new JTextField("  Enter user name: ", 15);
         txtPassword = new JTextField("  Enter password: ", 15);
         
-        txtUserName.setBackground(Color.black);
-        txtUserName.setForeground(Color.white);
-        txtUserName.setBorder(BorderFactory.createLineBorder(Color.green));
+        txtUsername.setBackground(Color.black);
+        txtUsername.setForeground(Color.white);
+        txtUsername.setBorder(BorderFactory.createLineBorder(Color.green));
         txtPassword.setBackground(Color.black);
         txtPassword.setForeground(Color.white);
         txtPassword.setBorder(BorderFactory.createLineBorder(Color.green));
@@ -60,8 +70,6 @@ public class LoginPanel extends JPanel{
         btnRegister = new JButton("      Register");
         btnLogin = new JButton("     Log In");
         
-        BtnListener listener = new BtnListener();
-        
         btnRegister.setOpaque(true);
         btnRegister.setBackground(Color.green);
         btnRegister.setForeground(Color.white);
@@ -70,54 +78,44 @@ public class LoginPanel extends JPanel{
         btnLogin.setBackground(Color.green);
         btnLogin.setForeground(Color.white);
         
-
-        
-        listener = new BtnListener();
-        btnLogin.addActionListener(listener);
-        
         btnPanel.setBackground(Color.black);
-        
-      
         btnPanel.add(btnLogin);
         btnPanel.add(btnRegister);
         
-        txtPanel.add(txtUserName);
+        txtPanel.add(txtUsername);
         txtPanel.add(txtPassword);
+        
+        lblRegister = new JLabel("To register please choose user type:");
         
         this.add(txtPanel);
         this.add(btnPanel);
+        this.add(lblRegister);
+        this.add(checkBoxPanel);
         
-       /* btnLogin.addActionListener(new ActionListener(){        
-            
-            public void actionPerformed(ActionEvent e) {
-            changeGUI(); 
-        }
-        });*/
+        
     }
-
-
-   /**
-     * An actionlistener that checks which button is pressed
-     * and either starts a new game or quits the program
-     */
-
-    private class BtnListener implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-
-            changeGUI(); 
-        }
-    }   
+    
+    public void addLoginListener(ActionListener listenForLoginButton){
+    	         
+    	        btnLogin.addActionListener(listenForLoginButton);
+    	         
+    	    }
+    
+    public void addRegisterListener(ActionListener listenForRegisterButton){
+    			btnRegister.addActionListener(listenForRegisterButton);
+    }
+    	
    
-   public void  changeGUI(){
-        int id;
-        String userName;
-        userName = txtUserName.getText();
-        handleLogin = new HandleLogin();
-       //String password = txtPassword.getText();
-       id = handleLogin.getUserID(userName);
-       id = id%10;
-       arenaFrame.setGUI(this.arenaFrame, id);
+   public String getUsername(){
+	   return txtUsername.getText();
+   }
+   
+   public String getPassword(){
+	   return txtPassword.getText();
+   }
+   
+   public String getType(){
+	  return checkBoxGroup.getSelectedCheckbox().getLabel();
    }
 
 }
