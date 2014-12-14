@@ -31,19 +31,29 @@ public class HandleUser extends OperatorTools {
 		password = user.getPassword();
 		id = user.getID();
 
-		deleteUser(user); // ska man spara ner den gamla profilen och dess data
+		//deleteUser(user); // ska man spara ner den gamla profilen och dess data
 							// så att den inte försvinner?
 
 		switch (newType.toLowerCase()) {
 		case "player":
 			new Player(name, password, id);
+			deleteUser(user);
 			break;
 		case "leagueowner":
 			new LeagueOwner(name, password, id);
+			deleteUser(user);
+			break;
 		case "advertiser":
 			new Advertiser(name, password, id);
-			// case 4: new Operator(name, password, id);
-
+			deleteUser(user);
+			break;
+		 case "operator": 
+			 new Operator(name, password, id);
+			 deleteUser(user);
+			 break;
+		 default: 	
+			 //
+			 break;
 		}
 
 	}

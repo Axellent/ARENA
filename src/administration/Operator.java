@@ -33,6 +33,7 @@ public class Operator extends User{
 		}
 	}
 	
+	
 	public boolean handleLeagueRequest(){
 		return true;
 	}
